@@ -1,7 +1,9 @@
 ---
 name: raea
-description: Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine, by writing React/TypeScript compositions with raea and rendering them on the GPU with the raea CLI (or playing games live). Use when the user wants an agent to produce a rendered video or animation from code, cut footage by its words, add captions or motion graphics, build a small playable game, or render frames headlessly.
-version: 0.1.0-canary.3
+description: Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine, by writing React/TypeScript compositions with raea and rendering them on the GPU with the raea CLI (or playing games live). Use when the user names raea, or wants 3D scenes (Bevy materials, lights, physics, Gaussian splats), 3D placed into footage (matchmove), a playable game, footage cut by its words, cuts timed to a song's beat map, or foley and instruments made locally on the Mac. Also for rendered video, captions and motion graphics from code, and frames rendered headlessly.
+metadata:
+  raea-tested-against: 0.1.0-canary.3
+  raea-verbs: render play check init cut song guide skill skills app controller workspace project spec doctor next library setup gen context brand
 ---
 
 # raea
@@ -122,7 +124,7 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 `raea guide rendering` covers stills, the check, bitrate and quality; `raea guide rubric` covers judging the rest.
 
 ## 5. Show it and read the notes — PAGE, PERSON
-<!-- sources: sdk/skills/raea/reference/feed.md -->
+<!-- sources: skills/skills/raea/reference/feed.md -->
 
 - In the raea app, post the render to the project's feed with `feed_post` (a watch, look, listen or play item); the
   person watches, plays and leaves notes on it there (PERSON). `feed_items` reads the items and their notes.
@@ -133,7 +135,7 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
   composition. Answer in their words, and never name the move to them.
 
 ## 6. The next version — HEADLESS, then PAGE
-<!-- sources: sdk/skills/raea/reference/feed.md -->
+<!-- sources: skills/skills/raea/reference/feed.md -->
 
 - Change the composition under the person's hand edits (the `edit` segments and `<Nudge>` props the app writes; see
   `raea guide rendering`), render again and check again.
@@ -145,7 +147,8 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 
 - Final exports: `--quality master` for motion graphics and type; name files with lowercase letters, digits and
   hyphens only (`spring-launch-9x16.mp4`).
-- A render is a standard file (H.264 High, yuv420p, AAC) but large; hand over a share copy too:
+- A render is a standard MP4 but large: H.264 High and AAC on a Mac (VideoToolbox), H.264 Constrained Baseline and
+  Opus on Windows and Linux (openh264), yuv420p on all. Hand over a share copy too, which any player takes:
   `ffmpeg -i film.mp4 -c:v libx264 -preset slow -crf 23 -maxrate 2600k -bufsize 5200k -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart film-share.mp4`.
 - Deliver to the controllers' specs (sizes, platforms, loudness) when the workspace sets them.
 
@@ -153,10 +156,13 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 <!-- sources: docs/targets.feature apps/targets/src sdk/ui/src/app.ts sdk/rune/src -->
 
 An app is a React file with a default export: DOM elements, inline `style` or Tailwind `className`, on @raea/ui. One
-setting picks the host that draws it. **web** (the default) is Blitz on Bevy, with Chrome's CSS and npm packages.
-**native** is Rune: a native window, native text, keyboard and accessibility, and springs on every change. The SDK
-is the same; only the setting differs. A composition or a game stays a composition; an app is an application's
-interface.
+setting picks the host that draws it. Both are desktop windows that draw every pixel themselves (neither uses the
+OS's widgets or a browser), with the same kind of text and layout engines. **web** (the default) is Blitz on Bevy: a
+browser engine, so all of CSS (grid included), web npm UI packages and the 3D world. **native** is Rune, an app UI
+framework: springs on every change, GPU effects and kit components, a screen-reader tree (AccessKit), a ~27 MB host
+against web's ~175 MB, a subset of CSS (no grid) and no 3D yet. The SDK is the same; only the setting differs. Pick
+native for a small, motion-heavy app with no 3D that passes its check; anything else stays on web. A composition or a
+game stays a composition; an app is an application's interface.
 
 - Say the target in the app's own file, as a literal (anything else is refused at its line):
   `export const app = { target: "native", title: "Notes", size: [480, 640], minSize: [360, 480] };`. With no
@@ -182,6 +188,11 @@ interface.
   `instant`, `blur`, `backdropBlur` and `glass`, and its `Badge`, `Spinner`, `Progress`, `RollingText` and
   `Switch`. On web, a preset motion becomes a CSS transition and an entrance a keyframe, blur and glass become filters,
   and the rest is ignored and listed by the check. Without these props an element lands at once, as in a browser.
+- Part of a web page can be Rune's: `<RuneLayer className="w-80 h-48">...</RuneLayer>` from `@raea/rune` draws its
+  children with Rune, on the GPU, in its box, and the rest of the page stays Blitz's. Give it a size: the layer is
+  its content box. Clicks and wheel reach its elements, and their handlers run as anywhere else. A
+  `getBoundingClientRect` inside one is zero, and keys don't reach a field in one yet. In a browser it's a plain
+  div. `RAEA_RUNE_LAYERS=0` draws it with Blitz.
 - Host calls (`call` and `callSync` from `@raea/ui/wire`), answered on both targets: `net.fetch`, `net.ws.*`,
   `net.storage.*`, `net.clipboard.*`, `os.open` (http, https, mailto), `fs.pick`, `fs.save`, `fs.read`, `fs.write`
   and `dialog.message`. Headless, a step answers a dialog: `{ pick: ["a.txt"] }`, `{ save: "out.txt" }`,
@@ -196,4 +207,3 @@ interface.
 
 - The guides: `raea guide` lists them; `raea guide NAME` prints one (`motion` first; `bevy` and `bevy/NAME` for 3D).
 - The SDK's behaviour: `sdk/raea/spec/motion.feature`; what 3D reaches: `raea guide coverage`.
-
