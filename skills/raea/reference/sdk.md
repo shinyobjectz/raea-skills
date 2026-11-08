@@ -67,7 +67,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/mesh` (sdk/raea/src/mesh.ts)
 
-`BufferMesh`, `Capsule`, `Capsule3d`, `Cone`, `ConicalFrustum`, `Cuboid`, `Cylinder`, `Instances`, `Mesh2d`, `Mesh3d`, `MeshSequence`, `Plane3d`, `Sphere`, `Torus`, `scatter`
+`ATTRIBUTE_COLOR`, `ATTRIBUTE_NORMAL`, `ATTRIBUTE_POSITION`, `ATTRIBUTE_TANGENT`, `ATTRIBUTE_UV_0`, `ATTRIBUTE_UV_1`, `BufferMesh`, `Capsule`, `Capsule3d`, `Cone`, `ConicalFrustum`, `Cuboid`, `Cylinder`, `Instances`, `Mesh2d`, `Mesh3d`, `MeshSequence`, `MeshVertexAttribute`, `Plane3d`, `Sphere`, `Torus`, `scatter`
 
 ## `raea/pbr` (sdk/raea/src/pbr.ts)
 
