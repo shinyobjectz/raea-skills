@@ -65,6 +65,15 @@ otherwise), one per studio or client, holding projects and controllers. In the r
 - The controllers (`raea controller ls`, `raea controller get PATH`) are the workspace's settings and workflows:
   delivery specs, who reviews what, the tools every agent gets. Work to them. Change one only when the person asks:
   `raea controller set PATH VALUE` (each change is a commit).
+- A controller is not a feed item. A feed item is one piece of work (a render, a still, a question): the person
+  reviews it once and a note on it is answered by its next version. A controller is a standing decision every agent
+  reads before it starts, so changing it changes all the work after. If the person would say it again on the next
+  piece ("always 9:16", "Grade checks every cut"), it belongs in a controller; if it's about this piece only, it's a
+  note. When the work needs such a decision from the person, put the controller in front of them with the feed's
+  `controller_post` (its id, the fields as group.field, a line on what you need decided) rather than asking in prose;
+  a controller you make with `controller_write` reaches their feed on its own. Fields are typed (toggle, choice,
+  number, text, list, agents, channels, workflow, servers, skills; reference/files.md), so put what they'll adjust in
+  fields, one controller per concern.
 - If the brief isn't shaped (no `believe`, no `mode`), shape it before making anything: ask who it's for and the one
   thing they should believe, or write your best guess and add its field to the brief's `assumed` list.
 - For a pitch, an explain or a story, plan first: write the deliverable's storyboard as `NAME.script.ts` beside the
