@@ -1,9 +1,9 @@
 ---
 name: raea
-description: Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine, by writing React/TypeScript compositions with raea and rendering them on the GPU with the raea CLI (or playing games live). Use when the user names raea, or wants 3D scenes (Bevy materials, lights, physics, Gaussian splats), 3D placed into footage (matchmove), a playable game, footage cut by its words, cuts timed to a song's beat map, or foley and instruments made locally on the Mac. Also for rendered video, captions and motion graphics from code, and frames rendered headlessly.
+description: Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine, by writing React/TypeScript compositions with raea and rendering them on the GPU with the raea CLI (or playing games live). Use when the user names raea, or wants 3D scenes (Bevy materials, lights, physics, Gaussian splats), 3D placed into footage (matchmove), a playable game, footage cut by its words, cuts timed to a song's beat map, or foley and instruments made locally on the Mac. Also for writing or fixing 3D TSX (Camera3d, Mesh3d, lights, materials, glTF models, post effects, an ECS world), a 3D render or play that looks wrong, extending raea's Bevy SDK, rendered video, captions and motion graphics from code, and frames rendered headlessly.
 metadata:
   raea-tested-against: 0.1.0-canary.3
-  raea-verbs: render play check init cut song guide skill skills app controller workspace project spec doctor next library setup gen context brand
+  raea-verbs: render play run check init cut song guide skill skills app controller workspace project spec doctor next library setup gen context brand scene splat blender
 ---
 
 # raea
@@ -21,8 +21,8 @@ person can do it. Every PAGE step says what a headless agent does instead.
 
 - macOS (Apple Silicon) or Linux (x86_64): `curl -fsSL https://raea.io/install | sh`. Windows 10 or 11, in
   PowerShell: `irm https://raea.io/install.ps1 | iex`. Either puts `raea` under `~/.raea`, puts it on your PATH, and
-  adds this skill and raea-bevy to `~/.claude/skills`. Run it again to update. `raea help` lists every verb.
-- Another agent: `raea skills install --agent claude|codex|kimi|gemini` puts the skills where that agent reads them.
+  adds this skill to `~/.claude/skills`. Run it again to update. `raea help` lists every verb.
+- Another agent: `raea skills install --agent claude|codex|kimi|gemini` puts this skill where that agent reads skills.
   `--pin quieter` (any move) adds a `/quieter` that loads one move. For Claude it also adds a hook that runs
   `raea check --quick` after a composition is saved and hands you what it finds.
 - This file's front matter names the raea it shipped with (`version:`). If `raea --version` prints another, read
@@ -105,8 +105,8 @@ Rules that keep renders right (`raea guide motion` has all ten, under "The core 
 - Footage: `<Video>` and `<Audio>`. Games: `useGameState(initial, step)` with a pure `step`, keys from `useInput()`.
 - Brand: the kit's `--brand-*` variables in `brand/brand.css` (`raea brand DOMAIN` reads them from a site), then
   `import { css } from "./styles.gen"` and Tailwind classes like `bg-brand-bg`.
-- 3D: read the raea-bevy skill first; an asset to fix first (scale, pivot, FBX to .glb) goes through Blender
-  (`raea setup blender`, then `raea guide bevy/blender`).
+- 3D: read [3d.md](3d.md) first; it routes to one file per topic in `3d/`. An asset to fix first (scale, pivot, FBX
+  to .glb) goes through Blender (`raea setup blender`, then [3d/blender.md](3d/blender.md)).
 - Sound: `raea guide sound` and `raea guide music`; to cut to a song, run `raea song FILE --plot FILE.song.png` and
   time cuts from its map, never a constant BPM. npm packages and React apps: `raea guide apps`.
 - Generated media: `raea guide gen` before the first `raea gen`.
