@@ -161,4 +161,3 @@ Run a flow board's workflow as it stands through raea gen (ComfyUI). Its outputs
 |---|---|---|
 | `board` | required | the flow board's item id |
 
-
