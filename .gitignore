@@ -1,0 +1,8 @@
+/target
+.DS_Store
+*.swp
+.env
+.env.*
+!.env.example
+# montology's local cache (the ontology db itself is committed once we init it)
+.monty/cache/

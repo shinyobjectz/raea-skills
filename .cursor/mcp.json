@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "montology": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/shinyobjectz/montology@main#subdirectory=.monty/cli",
+        "montology-mcp"
+      ]
+    }
+  }
+}

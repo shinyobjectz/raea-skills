@@ -1,0 +1,72 @@
+raea guide NAME prints one.
+
+The craft (router: the order of work and reading notes; craft right before any edit; a mode's guide when a brief names it):
+  router
+  craft
+  rubric   (how a critique is measured, judged and ranked)
+  explain
+  pitch
+  play
+  story
+  tool
+
+What a note asks for (read the one a note calls for before acting on it):
+  adapt
+  animate
+  bolder
+  clarify
+  critique
+  delight
+  distill
+  extract
+  generate
+  harden
+  layout
+  optimize
+  polish
+  quieter
+  recut
+  regrade
+  remix
+  retime
+  typeset
+
+Writing compositions (motion is the overview; read it first):
+  motion
+  3d
+  animating
+  apps
+  assets
+  brand
+  compositions
+  footage
+  games
+  gen
+  layout
+  music
+  parts
+  placement
+  rendering
+  sound
+  timing
+  words
+
+3D and games drawn by Bevy (bevy is the overview; read it first):
+  bevy
+  bevy/animation
+  bevy/assets
+  bevy/blender
+  bevy/characters
+  bevy/games
+  bevy/lights
+  bevy/limits
+  bevy/liquids
+  bevy/materials
+  bevy/meshes
+  bevy/post
+  bevy/rooms
+  bevy/scene
+  bevy/splats
+  coverage   (what of Bevy and Blitz the SDK reaches, type by type)
+
+(the files: ~/.raea/share/raea/sdk/guides/craft)

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "command": "monty guard",
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit"
+      }
+    ]
+  }
+}
