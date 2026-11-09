@@ -53,3 +53,14 @@ A ladder per domain or topic:
 
 A domain's depth is its weakest common task's. Raise depth where people's work goes first, and add an eval before
 calling anything D4.
+
+### Where it stands
+
+Only the topics a change has raised are recorded here. A topic not listed hasn't been rated yet.
+
+| Topic | Depth | What gets it there |
+|---|---|---|
+| craft/modes (5) | D2 | each mode has its decisions with the default to question, and a table of how it fails: what you see, why, what to change |
+| craft/verbs (19) | D2 | each verb has Decide (the choices before changing anything) and When it goes wrong |
+| motion/delivery | D2 | why, common mistakes, and an example that renders in three shapes; `raea check --platform` covers the UI zones |
+| motion/interface | D2 | why, common mistakes, and an example that `raea app check` passes with steps through every state |
