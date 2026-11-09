@@ -64,8 +64,10 @@ Writing compositions (motion is the overview; read it first):
   bevy/materials
   bevy/meshes
   bevy/post
+  bevy/prompts
   bevy/rooms
   bevy/scene
+  bevy/scenes
   bevy/splats
   coverage   (what of Bevy and Blitz the SDK reaches, type by type)
 

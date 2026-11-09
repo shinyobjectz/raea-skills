@@ -56,6 +56,6 @@ edits apply the next session — no copying.
 
 ## 7. Skills you already have
 
-- `raea`, `raea-bevy` — raea's core skills, in skills/ here. raea's installer and `raea skills install` ship them, at the commit raea pins. Their generated parts (`raea/reference/`, and `raea-bevy`'s topic files, copied from raea's craft guides) come from raea's `tools/skills.sh gen`: change those in raea, not here.
+- `raea` — raea's core skill, in skills/ here, 3D included (`raea/3d.md` and `raea/3d/`). raea's installer and `raea skills install` ship it, at the commit raea pins. Its generated parts (`raea/reference/`, and the 3D topic files in `raea/3d/`, copied from raea's craft guides; all but `rows.md` and `plugins.md`) come from raea's `tools/skills.sh gen`: change those in raea, not here.
 - `montology`, `words`, `intake` — vocabulary tools.
 - `i-have-adhd` — shapes how Claude talks to you (always on).
