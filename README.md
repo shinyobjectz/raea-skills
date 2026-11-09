@@ -43,7 +43,7 @@ skills/         one folder per skill (SKILL.md)
 features/       behaviour specs in Gherkin (Given / When / Then)
 crates/         skillcheck — the Rust checker and test runner
 upstream/raea/  snapshot of the raea these skills are checked against
-docs/           RULES · SOP · HOW-SKILLS-WORK
+docs/           RULES · SOP · HOW-SKILLS-WORK · TREE (how the raea skill is laid out, covered and deepened)
 ```
 
 ## Contributing
