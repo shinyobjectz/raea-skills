@@ -39,6 +39,8 @@ Generated from the code by `tools/skills.sh gen`, so they're current. Read the o
   spec's fields (brief.ts, NAME.script.ts, taste.ts, plan.ts, controllers/ID.ts).
 - [reference/sdk.md](reference/sdk.md): what each `raea` import gives a composition.
 - [reference/app.md](reference/app.md): driving the raea app's window over MCP, as a person would (HOST).
+- [reference/platforms.md](reference/platforms.md): each network the app publishes to: shapes, lengths, file and
+  caption limits, and where its interface covers the frame.
 
 ## The guides, by what you're making
 
@@ -182,7 +184,9 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 - A render is a standard MP4 but large: H.264 High and AAC on a Mac (VideoToolbox), H.264 Constrained Baseline and
   Opus on Windows and Linux (openh264), yuv420p on all. Hand over a share copy too, which any player takes:
   `ffmpeg -i film.mp4 -c:v libx264 -preset slow -crf 23 -maxrate 2600k -bufsize 5200k -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart film-share.mp4`.
-- Deliver to the controllers' specs (sizes, platforms, loudness) when the workspace sets them.
+- Deliver to the controllers' specs (sizes, platforms, loudness) when the workspace sets them; each network's shapes,
+  lengths and UI zones are in [reference/platforms.md](reference/platforms.md), and [delivery.md](delivery.md) routes
+  the rest (one composition per shape, cutdowns, tags, handing over).
 
 ## Apps: web or native — HEADLESS
 <!-- sources: docs/targets.feature apps/targets/src sdk/ui/src/app.ts sdk/rune/src -->

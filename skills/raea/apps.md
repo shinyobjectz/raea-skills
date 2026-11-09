@@ -9,9 +9,10 @@ raea's craft guides (`raea guide NAME` prints the same text).
 
 | You are... | Open |
 |---|---|
+| what an interface has to do for the people using it | [craft/modes/tool.md](craft/modes/tool.md) (read it first) |
+| building it: the task first, every state as real UI, roles and labels, steps that walk it, the check | [motion/interface.md](motion/interface.md) |
 | choosing web or native, the verbs, the check, host calls, Rune's props | [SKILL.md](SKILL.md) ("Apps: web or native") |
 | npm packages and React components inside a composition (not an app) | [motion/apps.md](motion/apps.md) |
-| what an app has to do for the people using it | [craft/modes/tool.md](craft/modes/tool.md) |
 | layout and type in the interface | [motion/layout.md](motion/layout.md), [craft/verbs/layout.md](craft/verbs/layout.md), [craft/verbs/typeset.md](craft/verbs/typeset.md) |
 | the brand's colours and type | [motion/brand.md](motion/brand.md) |
 | making it work at every size, or faster | [craft/verbs/adapt.md](craft/verbs/adapt.md), [craft/verbs/optimize.md](craft/verbs/optimize.md) |
@@ -24,4 +25,5 @@ raea's craft guides (`raea guide NAME` prints the same text).
 
 ## Checks
 
-`raea app check` on every target the app should run on, then read its PNGs and tree.json.
+`raea app check` on every target the app should run on, with steps that reach every state, then read each PNG and
+tree.json ([motion/interface.md](motion/interface.md)).
