@@ -163,6 +163,40 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 - In the raea app, post the render to the project's feed with `feed_post` (a watch, look, listen or play item); the
   person watches, plays and leaves notes on it there (PERSON). `feed_items` reads the items and their notes.
 - Headless instead: leave the file in the project's `out/`, give the person its path, and take their notes as text.
+- When you need the person to choose or fill something in (pick an opening, rank cuts, set a price), post an artifact:
+  a React `.tsx` of your own, `feed_post` with `type: "artifact"`, the file, and an `ask` line. The app builds it and
+  runs it sandboxed in the feed. Its default export is the component. It imports `react`, `@raea/app` and its own
+  files, nothing else (no fetch, no other packages). Tailwind classes use the feed's tokens (`bg-ground`, `text-ink`,
+  `text-ink-3`, `border-line`, `bg-accent`). Saving the file updates the open artifact in place, and a file that
+  doesn't compile shows its file and line there.
+
+  ```tsx
+  import { useState } from "react"
+  import { app, useItem } from "@raea/app"
+
+  const CUTS = ["15 s, hook first", "30 s, product last", "6 s bumper"]
+
+  export default function PickCut() {
+    const item = useItem() // { title, ask, status, answered, preview, media }
+    const [sent, setSent] = useState(false)
+    if (!item) return null
+    return (
+      <main className="p-8 text-ink">
+        <h1 className="text-lg font-semibold">{item.ask}</h1>
+        <div className="mt-4 grid gap-2">
+          {CUTS.map((c) => (
+            <button key={c} disabled={sent || item.answered} className="rounded-lg border border-line p-3 text-left hover:bg-accent/10"
+              onClick={() => app.result(`Picked: ${c}`).then(() => setSent(true))}>{c}</button>
+          ))}
+        </div>
+      </main>
+    )
+  }
+  ```
+
+  `app.result(text)` comes back to you as the person's next message; `app.comment(text, { x, y })` leaves a note on
+  the item, pinned to a point (0 to 1 across and down). Any other call is refused, naming it. On a card the artifact
+  is a preview that reads only; it acts once the person opens it.
 - Every note, from the feed or as text, gets a move before any edit: pick the one it asks for (quieter, bolder,
   distill, clarify, retime, recut, regrade, remix, harden, layout, typeset, animate, delight, adapt, optimize, extract,
   generate, polish, critique) on the part or moment it names, and read it (`craft/verbs/MOVE.md`, or `raea guide MOVE`)
