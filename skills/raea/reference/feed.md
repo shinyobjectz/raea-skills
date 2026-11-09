@@ -10,11 +10,12 @@ With no page, use the CLI instead: `raea controller` for the controllers, `raea 
 
 Access: PAGE.
 
-Post an item to the project's feed: a render to watch (.mp4), a still to look at (.png/.jpg), audio to listen to (.wav/.mp3/.m4a), a game to play (its .tsx), or an artifact (a React .tsx of your own that the person uses in the feed: a picker, a form, a tool. Its default export is the component; it imports react, @raea/app (its item, its result back to you, comments) and its own files, nothing else; Tailwind classes use the feed's tokens; saving the file updates it in place). The person sees it in the feed and leaves notes on it; a new version of an item names the one it replaces.
+Post an item to the project's feed: a render to watch (.mp4), a still to look at (.png/.jpg), audio to listen to (.wav/.mp3/.m4a), a game to play (its .tsx), or an artifact (a React .tsx of your own that the person uses in the feed: a picker, a form, a tool. Its default export is the component; it imports react, @raea/app (its item, its result back to you, comments) and its own files, nothing else; Tailwind classes use the feed's tokens; saving the file updates it in place), or an item a plugin the person installed draws (type plugin, its JSON as the file). The person sees it in the feed and leaves notes on it; a new version of an item names the one it replaces.
 
 | input | | |
 |---|---|---|
-| `type` | required | watch, look, listen, play or artifact |
+| `type` | required | watch, look, listen, play, artifact or plugin |
+| `plugin` | optional | plugin: the installed plugin and its item view, as "@you/raea-moodboard#moodboard"; the file is the JSON that view reads |
 | `ask` | optional | artifact: one line on what you want from the person, shown on its card |
 | `title` | required | what the person sees on the card |
 | `file` | required | absolute path of the file to post |

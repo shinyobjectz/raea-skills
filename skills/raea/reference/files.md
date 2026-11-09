@@ -57,6 +57,7 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/npm/store` |  | io/npm/src/lib.rs, io/npm/src/store.rs |
 | `~/.raea/objects` |  | io/shell/src/fs/mod.rs |
 | `~/.raea/onboarding.json` | `RAEA_ONBOARDING_FILE` | apps/app/host/onboard-account.ts, apps/app/host/onboard.ts |
+| `~/.raea/plugins` | `RAEA_PLUGINS` | apps/app/host/packages.ts, engine/bundle/src/edit.rs |
 | `~/.raea/plugins.json` | `RAEA_PLUGINS_FILE` | apps/app/host/plugins.ts |
 | `~/.raea/publish/drive.json` | `RAEA_DRIVE_PICKS` | apps/app/host/publish-source.ts |
 | `~/.raea/publish/ready.json` | `RAEA_PUBLISH_READY` | apps/app/host/publish-ready.ts |
