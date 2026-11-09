@@ -83,7 +83,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/sprite` (sdk/raea/src/sprite.ts)
 
-`Circle`, `ColorMaterial`, `Ellipse`, `Mesh2d`, `Rectangle`, `RegularPolygon`, `Shape2D`, `Sprite`
+`Annulus`, `Capsule2d`, `Circle`, `CircularSector`, `CircularSegment`, `ColorMaterial`, `ConvexPolygon`, `Ellipse`, `Mesh2d`, `Polyline2d`, `Rectangle`, `RegularPolygon`, `Rhombus`, `Segment2d`, `Shape2D`, `Sprite`, `Triangle2d`
 
 ## `raea/state` (sdk/raea/src/state.ts)
 
