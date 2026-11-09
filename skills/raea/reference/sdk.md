@@ -51,7 +51,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/image` (sdk/raea/src/image.ts)
 
-`ImagePlane`, `Img`, `Plate`
+`ImagePlane`, `Img`, `Plate`, `TextureAtlasBuilder`
 
 ## `raea/input` (sdk/raea/src/input.ts)
 
@@ -83,7 +83,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/sprite` (sdk/raea/src/sprite.ts)
 
-`Annulus`, `Capsule2d`, `Circle`, `CircularSector`, `CircularSegment`, `ColorMaterial`, `ConvexPolygon`, `Ellipse`, `Mesh2d`, `Polyline2d`, `Rectangle`, `RegularPolygon`, `Rhombus`, `Segment2d`, `Shape2D`, `Sprite`, `Triangle2d`
+`Annulus`, `Capsule2d`, `Circle`, `CircularSector`, `CircularSegment`, `ColorMaterial`, `ConvexPolygon`, `Ellipse`, `Mesh2d`, `Polyline2d`, `Rectangle`, `RegularPolygon`, `Rhombus`, `Segment2d`, `Shape2D`, `Sprite`, `TextureAtlasBuilder`, `Triangle2d`
 
 ## `raea/state` (sdk/raea/src/state.ts)
 
