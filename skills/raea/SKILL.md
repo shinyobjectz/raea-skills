@@ -40,6 +40,29 @@ Generated from the code by `tools/skills.sh gen`, so they're current. Read the o
 - [reference/sdk.md](reference/sdk.md): what each `raea` import gives a composition.
 - [reference/app.md](reference/app.md): driving the raea app's window over MCP, as a person would (HOST).
 
+## The guides, by what you're making
+
+raea's craft guides travel with this skill: each file under `motion/`, `3d/` and `craft/` is a copy of the guide
+`raea guide NAME` prints, so either works. Open the router for what you're making; it says which one or two files the
+task needs.
+
+| Making... | Open |
+|---|---|
+| a cut of real footage: takes cut by words, faces framed, captions, cuts to a song | [footage.md](footage.md) |
+| motion graphics and type: cards, stats, logos, end cards | [graphics.md](graphics.md) |
+| sound: voice, beds, foley, music for picture, the mix | [sound.md](sound.md) |
+| a 3D scene: lights, materials, models, people, rooms, splats | [3d.md](3d.md) |
+| a game, 2D or 3D | [games.md](games.md) |
+| an app's interface (web or native) | [apps.md](apps.md) |
+| generated images, video, sound or meshes | [gen.md](gen.md) |
+| the export, the share copy, platform specs, posting a deliverable | [delivery.md](delivery.md) |
+| working with the person in the raea app: the feed, controllers, the editor, boards | [collaborate.md](collaborate.md) |
+
+Across all of them, `craft/`: [craft/ROUTER.md](craft/ROUTER.md) is how to decide what to make (the order of work and
+reading notes); [craft/floor.md](craft/floor.md) is read right before every edit; `craft/modes/` says what a pitch,
+an explain, a story, a game or a tool has to do; `craft/verbs/` has one file per move a note asks for;
+[craft/rubric.md](craft/rubric.md) is how a critique is judged and ranked.
+
 ## 2. The workspace and its projects — HEADLESS
 <!-- sources: apps/workspace/src -->
 
@@ -140,8 +163,8 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 - Headless instead: leave the file in the project's `out/`, give the person its path, and take their notes as text.
 - Every note, from the feed or as text, gets a move before any edit: pick the one it asks for (quieter, bolder,
   distill, clarify, retime, recut, regrade, remix, harden, layout, typeset, animate, delight, adapt, optimize, extract,
-  generate, polish, critique) on the part or moment it names, and run `raea guide MOVE` before you touch the
-  composition. Answer in their words, and never name the move to them.
+  generate, polish, critique) on the part or moment it names, and read it (`craft/verbs/MOVE.md`, or `raea guide MOVE`)
+  before you touch the composition. Answer in their words, and never name the move to them.
 
 ## 6. The next version — HEADLESS, then PAGE
 <!-- sources: skills/skills/raea/reference/feed.md -->
@@ -214,5 +237,5 @@ game stays a composition; an app is an application's interface.
 
 ## Go further
 
-- The guides: `raea guide` lists them; `raea guide NAME` prints one (`motion` first; `bevy` and `bevy/NAME` for 3D).
+- The guides: the routers above, or `raea guide` (it lists them; `raea guide NAME` prints one, the same text as the copy here).
 - The SDK's behaviour: `sdk/raea/spec/motion.feature`; what 3D reaches: `raea guide coverage`.
