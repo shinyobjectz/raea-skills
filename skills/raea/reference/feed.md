@@ -18,6 +18,10 @@ Post an item to the project's feed: a render to watch (.mp4), a still to look at
 | `title` | required | what the person sees on the card |
 | `file` | required | absolute path of the file to post |
 | `replaces` | optional | the id of the item this is a new version of |
+| `changed` | optional | with replaces: one short line on what this version changed ("title bigger, cut the second shot"); the card shows it beside the new picture |
+| `export` | optional | true when this is a deliverable (an export for the client or a platform): it shows under Exports in the project's Table |
+| `tags` | optional | tags; key:value tags (platform:tiktok, aspect:9x16, cut:15s, market:uk) become the Table's columns, so use the same keys across a project's exports |
+| `uses` | optional | the library files it was made from (footage, stills, music) |
 | `controls` | optional | play: the game's controls |
 
 ## feed_propose
@@ -31,6 +35,17 @@ Propose a planned item for the person to accept: what you would make next, befor
 | `type` | required | string |
 | `title` | required | the item you would make |
 | `why` | optional | one line on why |
+
+## item_tags
+
+Access: PAGE.
+
+Set the tags of an item already in the project's feed (feed_items lists them with their tags), to give the project's Table its structure: key:value tags (platform:tiktok, aspect:9x16) are its columns, and the tag export makes the item a deliverable. Replaces the item's own tags.
+
+| input | | |
+|---|---|---|
+| `item` | required | the item's id |
+| `tags` | required | its tags, whole |
 
 ## feed_brief
 
@@ -87,6 +102,19 @@ Remove a controller from the workspace.
 |---|---|---|
 | `id` | required | the controller's id |
 
+## controller_post
+
+Access: PAGE.
+
+Put one of the workspace's controllers in the project's feed, for the person to set. Use it when the work needs a decision that should hold for every piece from now on (a delivery spec, a caption style, who reviews what): a controller every agent reads. A decision about one piece of work is a note on that item, not a controller. Name the fields it's about (group.field, as controllers_read lists them) and say in a line what you need decided. A new controller is posted to the feed on its own; don't post it again.
+
+| input | | |
+|---|---|---|
+| `controller` | required | the controller's id |
+| `fields` | optional | the fields to set, as group.field (or controller.group.field); the whole controller when left out |
+| `why` | required | one line: what you need the person to decide, and why now |
+| `title` | optional | what the person sees on the card; the controller's title when left out |
+
 ## channel_create
 
 Access: PAGE.
@@ -96,6 +124,33 @@ Make a channel (a client, a game, a show) from one sentence on what it is. Retur
 | input | | |
 |---|---|---|
 | `about` | required | one sentence on what the channel is |
+
+## editor_selection
+
+Access: PAGE.
+
+What the person has open in the composition editor right now: the composition, its version file, the playhead (seconds), the part they picked in the frame (id, name, box as fractions of the frame, any unsaved move/scale), and how many unsaved changes there are. Read it when they say "this", "here" or "the selected one".
+
+No input.
+
+## editor_edit
+
+Access: PAGE.
+
+Change the composition open in the editor, the way the person does, in the version they're editing: it shows on their picture and their undo takes it back, and it's saved with their changes. Move, scale or fade a part on the picture (`part`: an id from editor_selection's parts; dx/dy in pixels, scale/opacity as multipliers), or move, trim, split or delete a <Sequence> on the timeline (`clip`: an i from editor_selection's clips; from/to/split in seconds, delete: true). One change a call. Read editor_selection first.
+
+| input | | |
+|---|---|---|
+| `part` | optional | a part id from editor_selection's parts |
+| `dx` | optional | pixels right |
+| `dy` | optional | pixels down |
+| `scale` | optional | times its size now (1.2 = 20% bigger) |
+| `opacity` | optional | times its opacity now |
+| `clip` | optional | a clip's i from editor_selection's clips |
+| `from` | optional | the clip's new start, seconds |
+| `to` | optional | the clip's new end, seconds |
+| `split` | optional | split the clip here, seconds |
+| `delete` | optional | delete the clip |
 
 ## feed_items
 

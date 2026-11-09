@@ -42,25 +42,29 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/actions.jsonl` |  | io/shell/src/fs/mod.rs |
 | `~/.raea/bin` |  | io/assets/src/lib.rs, runtime/bundle/lib/src/lib.rs, runtime/page/src/faces.rs |
 | `~/.raea/cache` |  | apps/app/host/take.ts |
-| `~/.raea/env` | `RAEA_ENV_FILE` | apps/app/host/director.ts, io/gen-core/src/fal.rs, io/gen-core/src/fish.rs, io/gen-core/src/made.rs, io/gen-core/src/modal.rs, io/gen-core/src/openrouter.rs, io/gen-core/src/replicate.rs, io/gen-core/src/tripo.rs, io/home/src/lib.rs |
+| `~/.raea/env` | `RAEA_ENV_FILE` | apps/app/host/director.ts, apps/app/host/plugins.ts, io/gen-core/src/fal.rs, io/gen-core/src/fish.rs, io/gen-core/src/made.rs, io/gen-core/src/modal.rs, io/gen-core/src/openrouter.rs, io/gen-core/src/replicate.rs, io/gen-core/src/tripo.rs, io/home/src/lib.rs |
 | `~/.raea/evals/skills` |  | apps/app/host/evals/skills.ts |
+| `~/.raea/feed` |  | apps/app/host/feed-items.ts |
 | `~/.raea/feed/media` |  | apps/app/host/paths.ts |
 | `~/.raea/library` | `RAEA_LIBRARY_HOME` | apps/app/host/library/local.ts |
 | `~/.raea/library/granted.json` | `RAEA_LIBRARY_GRANTS` | apps/app/host/library/service.ts |
 | `~/.raea/library/hashes.json` | `RAEA_LIBRARY_STATE` | apps/app/host/library/scan.ts |
 | `~/.raea/library/requests.json` | `RAEA_LIBRARY_REQUESTS` | apps/app/host/library/service.ts |
+| `~/.raea/media` |  | apps/app/host/compositions.ts |
 | `~/.raea/models` | `RAEA_MODELS` | apps/app/host/library/embed.ts, apps/app/host/library/words.ts |
 | `~/.raea/node.json` | `RAEA_NODE_FILE` | apps/app/host/link.ts, apps/app/host/reach.ts |
 | `~/.raea/npm` | `RAEA_NPM_HOME` | io/npm/src/store.rs |
 | `~/.raea/npm/store` |  | io/npm/src/lib.rs, io/npm/src/store.rs |
 | `~/.raea/objects` |  | io/shell/src/fs/mod.rs |
 | `~/.raea/onboarding.json` | `RAEA_ONBOARDING_FILE` | apps/app/host/onboard-account.ts, apps/app/host/onboard.ts |
+| `~/.raea/plugins.json` | `RAEA_PLUGINS_FILE` | apps/app/host/plugins.ts |
 | `~/.raea/publish/drive.json` | `RAEA_DRIVE_PICKS` | apps/app/host/publish-source.ts |
 | `~/.raea/publish/ready.json` | `RAEA_PUBLISH_READY` | apps/app/host/publish-ready.ts |
 | `~/.raea/taste` | `RAEA_TASTE` | apps/app/host/taste.ts, engine/cli/src/guide.rs, engine/cli/src/spec.rs |
 | `~/.raea/taste/corrections.jsonl` |  | apps/app/host/taste.ts |
 | `~/.raea/taste/taste.ts` |  | engine/cli/src/guide.rs |
 | `~/.raea/update` | `RAEA_UPDATE_DIR` | apps/app/host/onboard.ts, apps/app/host/update.ts |
+| `~/.raea/usage-queue.json` |  | apps/app/host/telemetry.ts |
 
 ## The spec files
 
