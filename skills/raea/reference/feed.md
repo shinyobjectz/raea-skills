@@ -22,6 +22,7 @@ Post an item to the project's feed: a render to watch (.mp4), a still to look at
 | `file` | required | absolute path of the file to post |
 | `replaces` | optional | the id of the item this is a new version of |
 | `changed` | optional | with replaces: one short line on what this version changed ("title bigger, cut the second shot"); the card shows it beside the new picture |
+| `answers` | optional | with replaces: the ids of the person's comments on that item this version settles; each shows done, linked to this version |
 | `export` | optional | true when this is a deliverable (an export for the client or a platform): it shows under Exports in the project's Table |
 | `tags` | optional | tags; key:value tags (platform:tiktok, aspect:9x16, cut:15s, market:uk) become the Table's columns, so use the same keys across a project's exports |
 | `uses` | optional | the library files it was made from (footage, stills, music) |
@@ -38,6 +39,20 @@ Propose a planned item for the person to accept: what you would make next, befor
 | `type` | required | string |
 | `title` | required | the item you would make |
 | `why` | optional | one line on why |
+
+## comment_task
+
+Access: PAGE.
+
+Mark the person's comments on an item as you work them: each edit comment they send is a task they watch in the feed. Call it with state "working" as you start one (sub: a subagent's name when several of you split them), and "done" with a one-line note when it's settled without a new version or can't be; a version that settles comments says so with feed_post's answers instead. The note that sends them lists their ids.
+
+| input | | |
+|---|---|---|
+| `item` | required | the item the comments are on |
+| `comments` | required | the comments' ids |
+| `state` | required | working: you've started them; done: they're settled |
+| `sub` | optional | the subagent working them, when several split the comments |
+| `note` | optional | done: one line on what changed, or why it can't be done |
 
 ## item_tags
 

@@ -122,10 +122,10 @@ Flags: `--cloud`, `--kind` (1), `--library` (1), `--limit` (1), `--sound`.
 Access: HOST (starts the app), then PERSON to answer. Arguments besides flags: any number.
 
 ```
-raea show FILE... [--title T] [--ask LINE] [--project P] [--replaces ITEM] [--as NAME] [--role ROLE] [--inbox NAME] | raea show --question Q --choice A --choice B [STILL...]   (shown in the raea app as an item the person can use and answer, the window brought up on it: stills (several, a storyboard), a video, a sound, a NAME.script.ts or .md, a .tsx (an interactive artifact; a project's composition opens in its editor), or a question; what they send comes to ~/.raea/inbox/INBOX.jsonl; never open media in Preview while the app is installed)
+raea show FILE... [--title T] [--ask LINE] [--project P] [--replaces ITEM] [--as NAME] [--role ROLE] [--inbox NAME] | raea show --question Q --choice A --choice B [STILL...] | raea show --on ITEM [--working ID] [--done ID] [--note LINE] [--sub NAME]   (shown in the raea app as an item the person can use and answer, the window brought up on it: stills (several, a storyboard), a video, a sound, a NAME.script.ts or .md, a .tsx (an interactive artifact; a project's composition opens in its editor), or a question; what they send comes to ~/.raea/inbox/INBOX.jsonl; their edit comments are tasks: --working ID as you start one, --done ID when it's settled, or with the version that settles it, FILE --replaces ITEM --done ID; never open media in Preview while the app is installed)
 ```
 
-Flags: `--as` (1), `--ask` (1), `--choice` (1), `--inbox` (1), `--project` (1), `--question` (1), `--replaces` (1), `--role` (1), `--title` (1).
+Flags: `--as` (1), `--ask` (1), `--choice` (1), `--done` (1), `--inbox` (1), `--note` (1), `--on` (1), `--project` (1), `--question` (1), `--replaces` (1), `--role` (1), `--sub` (1), `--title` (1), `--working` (1).
 
 ## raea spec
 

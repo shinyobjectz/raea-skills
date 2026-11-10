@@ -226,6 +226,12 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 - Render each version to a new file beside the old (`piece-v2.mp4`), never over it: the earlier version stays
   watchable. In the app, post it with `feed_post` naming the item it `replaces` (outside it, `raea show --replaces
   ITEM FILE`), so the feed keeps both as versions.
+- The person's edits are tasks they watch, each with an id (in your turn's prompt in the app; in the inbox line's
+  `comments` outside it). Mark each working as you start it and done when it's settled: in the app, `comment_task`,
+  or `feed_post` with `answers` naming the comments the version settles; outside it, `raea show --on ITEM --working
+  ID` and `--done ID [--note LINE]`, or `raea show FILE --replaces ITEM --done ID...`. When subagents split them, name
+  the one on each (`sub`, `--sub NAME`). Done stays in view until the person resolves it; Not done sends it back as a
+  new edit.
 
 ## 7. Deliver — HEADLESS
 <!-- sources: runtime/export/src -->
