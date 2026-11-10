@@ -18,7 +18,8 @@ to reach for each. Headless, with no app, SKILL.md's steps 5 and 6 say what to d
 | have the person decide something that should hold for every piece from now on | `controller_post` with the fields and a line on why; a decision about one piece is a note on it, not a controller |
 | add a standing decision the person asked for, change one field, or retire one | `controller_write`, `controller_set`, `controller_remove`, only when the person asks |
 | work on what the person has open in the composition editor ("this", "here", "the selected one") | `editor_selection` first, then `editor_edit`: their undo takes it back, and it saves with their changes |
-| plan in the open before making: a shot list, a structure, options side by side | `whiteboard_write` (say what's on it and how it's grouped; the feed lays it out), `whiteboard_read` for what the person drew back |
+| show a plan before making it | previz first: a rough raea render of blocking, timing and camera, `feed_post` watch. Else a storyboard: key frames as one `feed_post` look with `files` in order, or a `board` (a .board Markdown table, one row a shot; an A/V/T script is `\| Time \| Video \| Audio \| Text \|`). Else a script: `feed_post` read with a .fountain screenplay (set as one in the feed) or .md for prose |
+| map how ideas, options and references connect, a structure to rearrange together | `whiteboard_write` (say what's on it and how it's grouped; the feed lays it out), `whiteboard_read` for what the person drew back. Not for the plan itself: show that as previz, a storyboard or a script |
 | show and tune a ComfyUI workflow the person can see | `flow_board` puts it on a board, `flow_write` changes its settings, `flow_run` runs it through `raea gen` (it spends: [gen.md](gen.md)) |
 | start a new project for a client, a game or a show | `channel_create` from one sentence, when the person asks for one |
 
