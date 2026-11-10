@@ -11,13 +11,13 @@ or an argument its usage doesn't name, so these lists are what it takes.
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea render EDIT.tsx -o OUT.mp4|OUT.png|OUT.wav|DIR [--audio OUT.wav] [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--layers] [--stage WxH] [--10bit] [--aov] [--alpha] [--kbps N | --quality draft|high|master|0..1] [--clay]   (also: --lite --comps)
+raea render EDIT.tsx -o OUT.mp4|OUT.png|OUT.wav|DIR [--audio OUT.wav] [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--layers] [--stage WxH] [--10bit] [--aov] [--alpha] [--kbps N | --quality draft|high|master|0..1] [--clay] [--despite CHECK WHY]   (also: --lite --comps)
 raea render EDIT.tsx --review DIR [--frame N]   (fixed cameras hero, front, right, top, iso, low in colour and clay: DIR/colour.png, clay.png, review.json)
 raea render PAGE.html -o OUT.mp4|OUT.png|DIR [--at A,B] [--alpha]   (an HTML composition)
 raea render --bundle NAME.comp.js -o OUT.png|DIR [--dir DIR] [--frame N]   (a bundle from raea bundle, as render_bundle draws it)
 ```
 
-Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--audio` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--layers`, `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
+Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--audio` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--despite` (2), `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--layers`, `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
 
 ## raea media
 
@@ -142,7 +142,7 @@ Flags: `--as` (1).
 Access: HEADLESS. Arguments besides flags: 2.
 
 ```
-raea workspace init [NAME] [--layout LAYOUT] | raea workspace adopt DIR [--name NAME] | raea workspace [--json]   (a workspace: a git repo of projects and controllers under raea.root, ~/Studio unless git config says)
+raea workspace init [NAME] [--layout LAYOUT] | raea workspace adopt DIR [--name NAME] | raea workspace [--json]   (a workspace: a git repo of projects and controllers under raea.root, ~/Documents/raea unless git config says)
 ```
 
 Flags: `--json`, `--layout` (1), `--name` (1).
@@ -173,7 +173,7 @@ Access: HEADLESS. Arguments besides flags: 1.
 
 ```
 raea check EDIT.tsx --quick [--shape S] [--platform P] [--taste T] [-o check.json]   (three stills of a composition checked for text: clipped, cramped, safe areas, sizes; about a second)
-raea check VIDEO.mp4 [--manifest render.json] [--words W.json] [--perception P.json] [--shape 16:9|9:16|4:5|1:1] [--platform tiktok|reels|shorts] [--taste taste.ts|DIR] [-o check.json]   (an export against the floor: clipped text, contrast, safe areas, freezes, flashing, cues, loudness, blotching, a placeholder brand kit; P0-P3)
+raea check VIDEO.mp4 [--manifest render.json] [--words W.json] [--perception P.json] [--shape 16:9|9:16|4:5|1:1] [--platform tiktok|reels|shorts] [--taste taste.ts|DIR] [-o check.json]   (an export against the floor: clipped text, contrast, safe areas, freezes, flashing, cues, loudness, blotching, a placeholder brand kit; its findings errors, warns and notes)
 ```
 
 Flags: `--manifest` (1), `--perception` (1), `--platform` (1), `--quick`, `--shape` (1), `--taste` (1), `--words` (1), `-o` (1).
@@ -345,6 +345,16 @@ raea world EDIT.tsx [--composition ID] [--frame N | --at A-B|A,B] [--find JSON] 
 ```
 
 Flags: `--at` (1), `--composition` (1), `--find` (1), `--frame` (1), `--json`, `--no-layout`.
+
+## raea findings
+
+Access: HEADLESS. Arguments besides flags: 1.
+
+```
+raea findings [PROJECT|EDIT.tsx] [--about NAME] [--check ID] [--open] [--since RENDER] [--json]   (what each render and raea check found, from the project's record: fixed, new and carried since the one before, or since RENDER; --open: only what stands)
+```
+
+Flags: `--about` (1), `--check` (1), `--json`, `--open`, `--since` (1).
 
 ## raea play
 
