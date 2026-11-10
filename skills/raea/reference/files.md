@@ -40,6 +40,7 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/Library/Caches` |  | apps/app/host/acp/fence.ts |
 | `~/.raea/account.json` | `RAEA_ACCOUNT` | apps/app/host/auth.ts |
 | `~/.raea/actions.jsonl` |  | io/shell/src/fs/mod.rs |
+| `~/.raea/app-host.json` |  | apps/app/host/host-file.ts, engine/cli/src/native.ts |
 | `~/.raea/app-prefs.json` | `RAEA_APP_PREFS` | apps/app/host/app-prefs.ts |
 | `~/.raea/bin` |  | io/assets/src/lib.rs, runtime/bundle/lib/src/lib.rs, runtime/page/src/faces.rs |
 | `~/.raea/cache` |  | apps/app/host/take.ts |
@@ -47,7 +48,8 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/evals/skills` |  | apps/app/host/evals/skills.ts |
 | `~/.raea/feed` |  | apps/app/host/feed-items.ts |
 | `~/.raea/feed/media` |  | apps/app/host/paths.ts |
-| `~/.raea/inbox` | `RAEA_INBOX_DIR` | apps/app/host/inbox.ts |
+| `~/.raea/inbox` | `RAEA_INBOX_DIR` | apps/app/host/inbox.ts, engine/cli/src/show.ts |
+| `~/.raea/inbox/INBOX.jsonl` |  | engine/cli/src/cli.rs |
 | `~/.raea/library` | `RAEA_LIBRARY_HOME` | apps/app/host/library/local.ts |
 | `~/.raea/library/granted.json` | `RAEA_LIBRARY_GRANTS` | apps/app/host/library/service.ts |
 | `~/.raea/library/hashes.json` | `RAEA_LIBRARY_STATE` | apps/app/host/library/scan.ts |
