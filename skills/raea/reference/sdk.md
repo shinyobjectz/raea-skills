@@ -39,7 +39,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/check` (sdk/raea/src/check.ts)
 
-`check`, `declared`, `found`, `runChecks`, `worldOf`
+`check`, `declared`, `found`, `inside`, `named`, `runChecks`, `turned`, `worldOf`
 
 ## `raea/color` (sdk/raea/src/color.ts)
 
