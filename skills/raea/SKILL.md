@@ -105,6 +105,12 @@ otherwise), one per studio or client, holding projects and controllers. In the r
   brief (`export default script({...})` from "raea/brief": scenes of beats, what's on screen and what each scene must
   land; its fields are in reference/files.md), name it on the deliverable, and add a task "storyboard approved" tagged `gate`. `raea spec NAME.script.ts`
   checks it. Render nothing until the person approves it (PERSON).
+- Show a plan as what it will be, in this order: previz (a rough, fast raea render of the blocking, timing and
+  camera: grey shapes, placeholder type, no polish; it is the plan, not the piece, so the gate allows it), else a
+  storyboard (key frames as one `feed_post` look with `files` in order, or a `board`: a .board Markdown table one row
+  a shot), else a script (`feed_post` read with a .fountain screenplay, or a board as an A/V/T script, `| Time |
+  Video | Audio | Text |`). People judge a picture faster than a description. A whiteboard maps how ideas, options
+  and references connect; it isn't the plan.
 - The person's footage and files: `raea library search "WORDS"` finds them by meaning across the libraries they've
   indexed (HEADLESS once indexed; adding a folder waits for the person's yes, PERSON).
 - Right before any edit to a composition, even a one-line change, read the floor: `raea guide craft`. Read
