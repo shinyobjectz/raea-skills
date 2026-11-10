@@ -40,7 +40,7 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/Library/Caches` |  | apps/app/host/acp/fence.ts |
 | `~/.raea/account.json` | `RAEA_ACCOUNT` | apps/app/host/auth.ts |
 | `~/.raea/actions.jsonl` |  | io/shell/src/fs/mod.rs |
-| `~/.raea/app-host.json` |  | apps/app/host/host-file.ts, engine/cli/src/native.ts |
+| `~/.raea/app-host.json` |  | apps/app/host/host-file.ts, engine/cli/src/app.ts |
 | `~/.raea/app-prefs.json` | `RAEA_APP_PREFS` | apps/app/host/app-prefs.ts |
 | `~/.raea/bin` |  | io/assets/src/lib.rs, runtime/bundle/lib/src/lib.rs, runtime/page/src/faces.rs |
 | `~/.raea/cache` |  | apps/app/host/take.ts |
