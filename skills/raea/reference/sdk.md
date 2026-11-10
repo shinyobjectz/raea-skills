@@ -73,6 +73,10 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 `ATTRIBUTE_COLOR`, `ATTRIBUTE_NORMAL`, `ATTRIBUTE_POSITION`, `ATTRIBUTE_TANGENT`, `ATTRIBUTE_UV_0`, `ATTRIBUTE_UV_1`, `BufferMesh`, `Capsule`, `Capsule3d`, `Cone`, `ConicalFrustum`, `Cuboid`, `Cylinder`, `Instances`, `Mesh2d`, `Mesh3d`, `MeshSequence`, `MeshVertexAttribute`, `Plane3d`, `Sphere`, `Torus`, `scatter`
 
+## `raea/note` (sdk/raea/src/note.ts)
+
+`note`
+
 ## `raea/pbr` (sdk/raea/src/pbr.ts)
 
 `AmbientOcclusion`, `Decal`, `ExtendedMaterial`, `Fire`, `Fog`, `FogFalloff`, `FogVolume`, `GridExtension`, `Lightmap`, `PaintExtension`, `ProceduralExtension`, `Refinish`, `ShaderExtension`, `ShaderMesh`, `StandardMaterial`, `SurfaceShader`, `ThreeShaderMaterial`, `ToonExtension`, `ToonMaterial`, `VolumetricFog`, `WearExtension`
