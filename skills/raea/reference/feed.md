@@ -10,11 +10,11 @@ With no page, use the CLI instead: `raea controller` for the controllers, `raea 
 
 Access: PAGE.
 
-Post an item to the project's feed: a render to watch (.mp4), a still to look at (.png/.jpg) or a storyboard of stills (look with files, in order), audio to listen to (.wav/.mp3/.m4a), a game to play (its .tsx), a script to read (read: a .fountain screenplay, or .md for prose), a storyboard table (board: a .board file, a Markdown table one row a shot, | Scene | On screen | Narration | Payoff | or an A/V/T script's | Time | Video | Audio | Text |), or an artifact (a React .tsx of your own that the person uses in the feed: a picker, a form, a tool. Its default export is the component; it imports react, @raea/app (its item, its result back to you, comments) and its own files, nothing else; Tailwind classes use the feed's tokens; saving the file updates it in place), or an item a plugin the person installed draws (type plugin, its JSON as the file). The person sees it in the feed and leaves notes on it; a new version of an item names the one it replaces.
+Post an item to the project's feed: a render to watch (.mp4), a still to look at (.png/.jpg) or a storyboard of stills (look with files, in order), audio to listen to (.wav/.mp3/.m4a), a game to play (its .tsx), a script to read (read: its NAME.script.ts, raea's Script, which the feed shows as a screenplay and as an A/V table; or a .md for prose), or an artifact (a React .tsx of your own that the person uses in the feed: a picker, a form, a tool. Its default export is the component; it imports react, @raea/app (its item, its result back to you, comments) and its own files, nothing else; Tailwind classes use the feed's tokens; saving the file updates it in place), or an item a plugin the person installed draws (type plugin, its JSON as the file). The person sees it in the feed and leaves notes on it; a new version of an item names the one it replaces.
 
 | input | | |
 |---|---|---|
-| `type` | required | watch, look, listen, play, read, board, artifact or plugin |
+| `type` | required | watch, look, listen, play, read, artifact or plugin |
 | `files` | optional | look: a storyboard's frames after the first (file), absolute paths, in order; the person sees them side by side |
 | `plugin` | optional | plugin: the installed plugin and its item view, as "@you/raea-moodboard#moodboard"; the file is the JSON that view reads |
 | `ask` | optional | artifact: one line on what you want from the person, shown on its card |
@@ -177,7 +177,7 @@ Read a whiteboard item: its plan (what you or another agent wrote) and every ele
 
 Access: PAGE.
 
-For mapping, not for showing the plan: how ideas, options and references connect, a structure to rearrange. A plan the person should judge is better shown as what it will be: previz (a rough raea render, feed_post watch), a storyboard (stills as one look item with files, or a board), or a script (read: Fountain, or a board as an A/V/T script); use those first. Make a whiteboard (a plan, with no board) or change one (board plus a plan to replace its plan, or a patch). Say what is on it and how it's grouped; the feed lays it out, so never give positions. Sections become frames side by side: notes stacks cards, flow stacks them with arrows between, refs shows feed items' posters. People's own drawing on the board is kept.
+For mapping, not for showing the plan: how ideas, options and references connect, a structure to rearrange. A plan the person should judge is better shown as what it will be: previz (a rough raea render, feed_post watch), a storyboard (key frames as one look item with files), or a script (read: its NAME.script.ts, shown as a screenplay or an A/V table); use those first. Make a whiteboard (a plan, with no board) or change one (board plus a plan to replace its plan, or a patch). Say what is on it and how it's grouped; the feed lays it out, so never give positions. Sections become frames side by side: notes stacks cards, flow stacks them with arrows between, refs shows feed items' posters. People's own drawing on the board is kept.
 
 | input | | |
 |---|---|---|
