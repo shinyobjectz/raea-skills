@@ -183,7 +183,7 @@ Flags: `--manifest` (1), `--perception` (1), `--platform` (1), `--quick`, `--sha
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea hook claude   (Claude Code's PostToolUse hook: the quick check after a composition is saved)
+raea hook [claude|codex|gemini|kimi]   (every agent's tool hooks, which raea skills install adds: before a shell command, media opened in the Mac's viewer while the raea app is installed is stopped once for raea show (the same command again goes through); after a save, the quick check on a composition)
 ```
 
 ## raea next
@@ -219,7 +219,7 @@ Flags: `--png` (1), `--script` (1), `--size` (1), `--target` (1), `-o` (1).
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and for claude adds the quick-check hook unless --no-hooks)
+raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is)
 ```
 
 Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
@@ -229,7 +229,7 @@ Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and for claude adds the quick-check hook unless --no-hooks)
+raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is)
 ```
 
 Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
