@@ -168,15 +168,17 @@ raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.
 
 - In the raea app, post the render to the project's feed with `feed_post` (a watch, look, listen or play item); the
   person watches, plays and leaves notes on it there (PERSON). `feed_items` reads the items and their notes.
-- Outside the app (a session in a terminal: Claude Code, Codex, Gemini), `raea show` does what `feed_post` does:
-  `raea show FILE...` puts stills (several make a storyboard), a video, a sound, a `NAME.script.ts` or `.md`, or a
-  `.tsx` artifact in the project's feed as an item the person can use, and brings the app's window up on it (it starts
-  the app if it's installed). Ask with `raea show --question "Which opening?" --choice "Crowd" --choice "Steps"`, or
-  stills as the choices. While the raea app is installed, never open a render, a still, a contact sheet or a question
-  in Preview or a browser: show it. What the person sends on it (notes, edits, picks, answers, an artifact's
-  `app.result`) comes back as JSON lines in the inbox file `raea show` prints; follow it (`tail -n0 -F FILE`, or your
-  harness's monitor) and answer each. Without the app, `raea show` opens the file in the Mac's own viewer and says
-  so; take the person's notes as text then.
+- Outside the app (a session in a terminal: Claude Code, Codex, Gemini CLI, Kimi Code, any harness), `raea show` does
+  what `feed_post` does: `raea show FILE...` puts stills (several make a storyboard), a video, a sound, a
+  `NAME.script.ts` or `.md`, or a `.tsx` artifact in the project's feed as an item the person can use, and brings the
+  app's window up on it (it starts the app if it's installed). Ask with `raea show --question "Which opening?" --choice
+  "Crowd" --choice "Steps"`, or stills as the choices. While the raea app is installed, never open a render, a still,
+  a contact sheet or a question in Preview or a browser: show it. raea's hook (`raea skills install --agent A` adds it
+  to any of them) stops such an open once and names the `raea show` command; run the same command again only when the
+  person asked for the viewer. What the person sends on it (notes, edits, picks, answers, an artifact's `app.result`)
+  comes back as JSON lines in the inbox file `raea show` prints; follow it (`tail -n0 -F FILE`, or your harness's
+  monitor) and answer each. Without the app, `raea show` opens the file in the Mac's own viewer and says so; take the
+  person's notes as text then.
 - When you need the person to choose or fill something in (pick an opening, rank cuts, set a price), post an artifact:
   a React `.tsx` of your own, `feed_post` with `type: "artifact"`, the file, and an `ask` line. The app builds it and
   runs it sandboxed in the feed. Its default export is the component. It imports `react`, `@raea/app` and its own
