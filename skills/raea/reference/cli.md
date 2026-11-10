@@ -11,13 +11,13 @@ or an argument its usage doesn't name, so these lists are what it takes.
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea render EDIT.tsx -o OUT.mp4|OUT.png|DIR [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--stage WxH] [--10bit] [--aov] [--alpha] [--kbps N | --quality draft|high|master|0..1] [--clay]   (also: --lite --comps)
+raea render EDIT.tsx -o OUT.mp4|OUT.png|DIR [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--layers] [--stage WxH] [--10bit] [--aov] [--alpha] [--kbps N | --quality draft|high|master|0..1] [--clay]   (also: --lite --comps)
 raea render EDIT.tsx --review DIR [--frame N]   (fixed cameras hero, front, right, top, iso, low in colour and clay: DIR/colour.png, clay.png, review.json)
 raea render PAGE.html -o OUT.mp4|OUT.png|DIR [--at A,B] [--alpha]   (an HTML composition)
 raea render --bundle NAME.comp.js -o OUT.png|DIR [--dir DIR] [--frame N]   (a bundle from raea bundle, as render_bundle draws it)
 ```
 
-Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
+Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--layers`, `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
 
 ## raea media
 
@@ -116,6 +116,16 @@ raea library [new NAME [--cloud] | add LIBRARY PATH | files LIBRARY | tag SHA TA
 ```
 
 Flags: `--cloud`, `--kind` (1), `--library` (1), `--limit` (1), `--sound`.
+
+## raea show
+
+Access: HOST (starts the app), then PERSON to answer. Arguments besides flags: any number.
+
+```
+raea show FILE... [--title T] [--ask LINE] [--project P] [--replaces ITEM] [--as NAME] [--role ROLE] [--inbox NAME] | raea show --question Q --choice A --choice B [STILL...]   (shown in the raea app as an item the person can use and answer, the window brought up on it: stills (several, a storyboard), a video, a sound, a NAME.script.ts or .md, a .tsx (an interactive artifact; a project's composition opens in its editor), or a question; what they send comes to ~/.raea/inbox/INBOX.jsonl; never open media in Preview while the app is installed)
+```
+
+Flags: `--as` (1), `--ask` (1), `--choice` (1), `--inbox` (1), `--project` (1), `--question` (1), `--replaces` (1), `--role` (1), `--title` (1).
 
 ## raea spec
 
