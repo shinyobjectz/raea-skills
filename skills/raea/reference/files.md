@@ -40,13 +40,14 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/Library/Caches` |  | apps/app/host/acp/fence.ts |
 | `~/.raea/account.json` | `RAEA_ACCOUNT` | apps/app/host/auth.ts |
 | `~/.raea/actions.jsonl` |  | io/shell/src/fs/mod.rs |
-| `~/.raea/app-prefs.json` | `RAEA_APP_PREFS` | apps/app/host/render-layers.ts |
+| `~/.raea/app-prefs.json` | `RAEA_APP_PREFS` | apps/app/host/app-prefs.ts |
 | `~/.raea/bin` |  | io/assets/src/lib.rs, runtime/bundle/lib/src/lib.rs, runtime/page/src/faces.rs |
 | `~/.raea/cache` |  | apps/app/host/take.ts |
 | `~/.raea/env` | `RAEA_ENV_FILE` | apps/app/host/director.ts, apps/app/host/plugins.ts, io/gen-core/src/fal.rs, io/gen-core/src/fish.rs, io/gen-core/src/made.rs, io/gen-core/src/modal.rs, io/gen-core/src/openrouter.rs, io/gen-core/src/replicate.rs, io/gen-core/src/tripo.rs, io/home/src/lib.rs |
 | `~/.raea/evals/skills` |  | apps/app/host/evals/skills.ts |
 | `~/.raea/feed` |  | apps/app/host/feed-items.ts |
 | `~/.raea/feed/media` |  | apps/app/host/paths.ts |
+| `~/.raea/inbox` | `RAEA_INBOX_DIR` | apps/app/host/inbox.ts |
 | `~/.raea/library` | `RAEA_LIBRARY_HOME` | apps/app/host/library/local.ts |
 | `~/.raea/library/granted.json` | `RAEA_LIBRARY_GRANTS` | apps/app/host/library/service.ts |
 | `~/.raea/library/hashes.json` | `RAEA_LIBRARY_STATE` | apps/app/host/library/scan.ts |
@@ -62,6 +63,7 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/plugins.json` | `RAEA_PLUGINS_FILE` | apps/app/host/plugins.ts |
 | `~/.raea/publish/drive.json` | `RAEA_DRIVE_PICKS` | apps/app/host/publish-source.ts |
 | `~/.raea/publish/ready.json` | `RAEA_PUBLISH_READY` | apps/app/host/publish-ready.ts |
+| `~/.raea/sessions` | `RAEA_SESSIONS_DIR` | apps/app/host/sessions.ts |
 | `~/.raea/taste` | `RAEA_TASTE` | apps/app/host/taste.ts, engine/cli/src/guide.rs, engine/cli/src/spec.rs |
 | `~/.raea/taste/corrections.jsonl` |  | apps/app/host/taste.ts |
 | `~/.raea/taste/taste.ts` |  | engine/cli/src/guide.rs |
