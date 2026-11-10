@@ -24,7 +24,7 @@ Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--bundle` (1), `--clay`, `--c
 Access: HEADLESS. Its arguments go to a parser of its own: `raea media` alone lists them.
 
 ```
-raea media probe|still|sheet|audio|loudness|motion|cuts|freezes|proxy|trim|concat FILE ... | ffmpeg ARGS | ffprobe ARGS   (media work, native: media help)
+raea media probe|still|sheet|audio|loudness|motion|cuts|freezes|proxy|lod|trim|concat FILE ... | ffmpeg ARGS | ffprobe ARGS   (media work, native: media help)
 ```
 
 ## raea bundle
@@ -341,10 +341,10 @@ Flags: `--brief` (1), `--by` (1), `--dry`, `--json`, `--pass` (1), `--target` (1
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea play EDIT.tsx [--input | --input-script KEYS.json] [--size WxH] [--seconds N|end]   (a game, live; also: --input-log FILE --offscreen --snapshot T FILE --json FILE --seek F FILE --scrub N --baked --autoplay --no-vsync --master --3d)
+raea play EDIT.tsx [--input | --input-script KEYS.json] [--size WxH] [--seconds N|end]   (a game, live; also: --input-log FILE --offscreen --snapshot T FILE --json FILE --seek F FILE --pick X,Y --view YAW,PITCH,DISTANCE --scrub N --baked --autoplay --no-vsync --master --3d)
 ```
 
-Flags: `--3d`, `--autoplay`, `--baked`, `--input`, `--input-log` (1), `--input-script` (1), `--json` (1), `--master`, `--no-vsync`, `--offscreen`, `--scrub` (1), `--seconds` (1), `--seek` (2), `--size` (1), `--snapshot` (2).
+Flags: `--3d`, `--autoplay`, `--baked`, `--input`, `--input-log` (1), `--input-script` (1), `--json` (1), `--master`, `--no-vsync`, `--offscreen`, `--pick` (1), `--scrub` (1), `--seconds` (1), `--seek` (2), `--size` (1), `--snapshot` (2), `--view` (1).
 
 ## raea export-game
 
