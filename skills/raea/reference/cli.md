@@ -173,10 +173,11 @@ Access: HEADLESS. Arguments besides flags: 1.
 
 ```
 raea check EDIT.tsx --quick [--shape S] [--platform P] [--taste T] [-o check.json]   (three stills of a composition checked for text: clipped, cramped, safe areas, sizes; about a second)
+raea check [PROJECT|EDIT.tsx] [--composition ID] [--only ID] [--taste T] [--render OUT | --no-render] [--json]   (every check that applies to each composition, over its frames: raea's floor on its newest render, the person's taste, the workspace's and the project's rules (a controller's rule fields: one of raea's checks by name, or a project's .ts check); what needs a render and has none waits, and says so)
 raea check VIDEO.mp4 [--manifest render.json] [--words W.json] [--perception P.json] [--shape 16:9|9:16|4:5|1:1] [--platform tiktok|reels|shorts] [--taste taste.ts|DIR] [-o check.json]   (an export against the floor: clipped text, contrast, safe areas, freezes, flashing, cues, loudness, blotching, a placeholder brand kit; its findings errors, warns and notes)
 ```
 
-Flags: `--manifest` (1), `--perception` (1), `--platform` (1), `--quick`, `--shape` (1), `--taste` (1), `--words` (1), `-o` (1).
+Flags: `--composition` (1), `--json`, `--manifest` (1), `--no-render`, `--only` (1), `--perception` (1), `--platform` (1), `--quick`, `--render` (1), `--shape` (1), `--taste` (1), `--words` (1), `-o` (1).
 
 ## raea hook
 
@@ -341,10 +342,10 @@ Flags: `--brief` (1), `--by` (1), `--dry`, `--json`, `--pass` (1), `--target` (1
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea world EDIT.tsx [--composition ID] [--frame N | --at A-B|A,B] [--find JSON] [--no-layout] [--json]   (a frame as one world: its layers, text, parts, camera, shots, clips, cues and lines as entities with components, each measured; --find '{"with": ["Text", "Layer"], "where": {"Layer.medium": "2d-type"}}' is one query across media)
+raea world EDIT.tsx [--composition ID] [--frame N | --at A-B|A,B] [--find JSON] [--no-layout] [--render OUT | --no-render] [--json]   (a frame as one world: its layers, text, parts, camera, shots, clips, cues and lines as entities with components, each measured, with what its newest render measured (contrast, light and movement, loudness, onsets, covers) or what waits for one; --find '{"with": ["Text", "Layer"], "where": {"Layer.medium": "2d-type"}}' is one query across media)
 ```
 
-Flags: `--at` (1), `--composition` (1), `--find` (1), `--frame` (1), `--json`, `--no-layout`.
+Flags: `--at` (1), `--composition` (1), `--find` (1), `--frame` (1), `--json`, `--no-layout`, `--no-render`, `--render` (1).
 
 ## raea findings
 

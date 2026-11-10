@@ -37,6 +37,10 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 `Camera3d`, `Canvas3D`, `Hdr`, `Matchmove`, `TextureView`, `checkMatchmove`, `matchmoveIndex`, `matchmoveView`, `useMatchmove`
 
+## `raea/check` (sdk/raea/src/check.ts)
+
+`check`, `declared`, `found`, `runChecks`, `worldOf`
+
 ## `raea/color` (sdk/raea/src/color.ts)
 
 `Hsla`, `LinearRgba`, `Okhsla`, `Oklaba`, `Oklcha`, `Srgba`, `Xyza`, `kelvin`, `toHex`

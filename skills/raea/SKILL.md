@@ -68,8 +68,9 @@ an explain, a story, a game or a tool has to do; `craft/verbs/` has one file per
 ## 2. The workspace and its projects — HEADLESS
 <!-- sources: apps/workspace/src -->
 
-Work lives in a workspace: a git repo under raea.root (`~/Studio` unless `git config --global raea.root` says
-otherwise), one per studio or client, holding projects and controllers. In the raea app a project shows as a channel.
+Work lives in a workspace: a git repo under raea.root (`git config --global raea.root`; unset, `~/Studio` where
+workspaces already are, else `~/Documents/raea`, or `~/raea` when iCloud keeps Documents), one per studio or client,
+holding projects and controllers. In the raea app a project shows as a channel.
 - `raea workspace init NAME` makes one; `raea workspace adopt DIR` makes an existing folder one. `raea workspace`
   shows it (`--json` for the projects and their paths).
 - `raea project new NAME` adds a project: its folder with `brief.ts`, `media/`, `out/` and `brand/`. A project can
@@ -97,8 +98,11 @@ otherwise), one per studio or client, holding projects and controllers. In the r
   note. When the work needs such a decision from the person, put the controller in front of them with the feed's
   `controller_post` (its id, the fields as group.field, a line on what you need decided) rather than asking in prose;
   a controller you make with `controller_write` reaches their feed on its own. Fields are typed (toggle, choice,
-  number, text, list, agents, channels, workflow, servers, skills; reference/files.md), so put what they'll adjust in
-  fields, one controller per concern.
+  number, text, list, agents, channels, workflow, servers, skills, rule; reference/files.md), so put what they'll
+  adjust in fields, one controller per concern.
+- A `rule` field is a line every piece is held to and the check that holds it: one of raea's by name with its values,
+  or a `.ts` check written with `raea/check` (craft/ROUTER.md, step 7). `raea check PROJECT` runs every rule that
+  applies, with raea's floor and the person's taste, and says what waits for a render.
 - If the brief isn't shaped (no `believe`, no `mode`), shape it before making anything: ask who it's for and the one
   thing they should believe, or write your best guess and add its field to the brief's `assumed` list.
 - For a pitch, an explain or a story, plan first: write the deliverable's storyboard as `NAME.script.ts` beside the
