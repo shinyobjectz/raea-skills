@@ -240,7 +240,8 @@ Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea setup blender [--check] [--download]   (find Blender or download the LTS into ~/.raea/tools/blender, and install its MCP add-on)
+raea setup blender [--check] [--download]   (find Blender or download the LTS into ~/.raea/tools/blender, and install raea's add-on and the MCP add-on)
+raea setup godot [--check]   (download Godot 4.6.1 with GodotJS, its TypeScript bindings (MIT), into ~/.raea/tools/godot: JavaScriptCore on the Mac, QuickJS on Windows and Linux; checked against its pinned sha256)
 ```
 
 Flags: `--check`, `--download`.
@@ -251,6 +252,17 @@ Access: HEADLESS. Its arguments go to a parser of its own: `raea blender` alone 
 
 ```
 raea blender run SCRIPT.py [ARGS...]   (blender --background --python SCRIPT.py -- ARGS, headless; blender/X.py missing from the project is copied from the library: convert, decimate, repair, split, bake, rig, cloth)
+raea blender run SCRIPT.ts [FILE.blend] [ARGS...]   (a TypeScript script against Blender's whole Python API through raea/blender: bpy, bmesh, mathutils, typed; a headless Blender, FILE.blend opened, quit when the script ends)
+```
+
+## raea godot
+
+Access: HEADLESS. Its arguments go to a parser of its own: `raea godot` alone lists them.
+
+```
+raea godot run SCRIPT.ts [--project DIR] [--window] [--movie FILE [--fps N]] [--size WxH] [--timeout S] [ARGS...]   (a TypeScript script against Godot's whole API through raea/godot: its default export gets the SceneTree and ARGS, headless unless --window; --movie writes every frame Godot draws (NAME.png numbered, or .avi) at a fixed --fps, 30 unless given; the project is DIR, else the nearest project.godot above the script, else an empty one; Godot quits when it returns)
+raea godot types [DIR]   (the project's own TypeScript types from GodotJS: Godot's API with its scenes, resources and input actions, into DIR/typings)
+raea godot open [DIR]   (the Godot editor on the project, GodotJS's, to edit its scenes)
 ```
 
 ## raea init
