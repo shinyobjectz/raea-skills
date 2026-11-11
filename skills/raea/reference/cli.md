@@ -241,7 +241,7 @@ Access: HEADLESS. Arguments besides flags: 1.
 
 ```
 raea setup blender [--check] [--download]   (find Blender or download the LTS into ~/.raea/tools/blender, and install raea's add-on and the MCP add-on)
-raea setup godot [--check]   (download Godot 4.6.1 with GodotJS, its TypeScript bindings (MIT), into ~/.raea/tools/godot: JavaScriptCore on the Mac, QuickJS on Windows and Linux; checked against its pinned sha256)
+raea setup godot [--check]   (download Godot 4.6.1 with GodotJS, its TypeScript bindings (MIT), into ~/.raea/tools/godot: JavaScriptCore on the Mac, QuickJS on Windows and Linux; raea's own build (the Mac's notarized), else GodotJS's, each checked against its pinned sha256)
 ```
 
 Flags: `--check`, `--download`.
@@ -253,6 +253,9 @@ Access: HEADLESS. Its arguments go to a parser of its own: `raea blender` alone 
 ```
 raea blender run SCRIPT.py [ARGS...]   (blender --background --python SCRIPT.py -- ARGS, headless; blender/X.py missing from the project is copied from the library: convert, decimate, repair, split, bake, rig, cloth)
 raea blender run SCRIPT.ts [FILE.blend] [ARGS...]   (a TypeScript script against Blender's whole Python API through raea/blender: bpy, bmesh, mathutils, typed; a headless Blender, FILE.blend opened, quit when the script ends)
+raea blender shot SCRIPT.ts|FILE.blend -o DIR --frames N [--fps F] [--size WxH] [--engine eevee|cycles|workbench] [--samples S] [--transparent]   (a shot's frames rendered by Blender, DIR/0000.png on: a raea/blender script's scene or a .blend's animation; what <BlenderShot> shows, from raea/blender/shot)
+raea blender open EDIT.tsx [--frame N | --at A-B] [-o DIR] [--no-window] | FILE.blend|.glb   (the composition's 3D built in Blender, saved as DIR/NAME.blend (out/blender/NAME/ unless -o) and opened in a Blender window; a model or .blend opened as it is)
+raea blender back FILE.blend   (what changed in Blender since raea blender open, as edits to the TSX at their lines; meshes made there written as media/NAME.glb; --json)
 ```
 
 ## raea godot
@@ -260,10 +263,24 @@ raea blender run SCRIPT.ts [FILE.blend] [ARGS...]   (a TypeScript script against
 Access: HEADLESS. Its arguments go to a parser of its own: `raea godot` alone lists them.
 
 ```
-raea godot run SCRIPT.ts [--project DIR] [--window] [--movie FILE [--fps N]] [--size WxH] [--timeout S] [ARGS...]   (a TypeScript script against Godot's whole API through raea/godot: its default export gets the SceneTree and ARGS, headless unless --window; --movie writes every frame Godot draws (NAME.png numbered, or .avi) at a fixed --fps, 30 unless given; the project is DIR, else the nearest project.godot above the script, else an empty one; Godot quits when it returns)
+raea godot run [SCRIPT.ts] [--project DIR] [--window] [--movie FILE [--fps N] [--frames N]] [--scene res://X.tscn] [--size WxH] [--timeout S] [ARGS...]   (a TypeScript script against Godot's whole API through raea/godot: its default export gets the SceneTree and ARGS, headless unless --window; --movie writes every frame Godot draws (NAME.png numbered, or .avi) at a fixed --fps, 30 unless given; the project is DIR, else the nearest project.godot above the script, else an empty one; Godot quits when it returns, or after --frames N; --scene plays a scene of the project under it, with no script needed; a scene in --window plays until the window is closed)
 raea godot types [DIR]   (the project's own TypeScript types from GodotJS: Godot's API with its scenes, resources and input actions, into DIR/typings)
 raea godot open [DIR]   (the Godot editor on the project, GodotJS's, to edit its scenes)
+raea godot shot SCRIPT.ts|res://SCENE.tscn [--project DIR] -o DIR --frames N [--fps F] [--size WxH]   (a shot's frames recorded by Godot's Movie Maker, DIR/0000.png on, its sound as sound.wav; what <GodotShot> shows, from raea/godot/shot)
+raea godot export EDIT.tsx -o DIR [--frame N | --at A-B]   (the composition's 3D as a Godot project that runs: project.godot and main.tscn, each part Godot's own node, --at's frames an AnimationPlayer)
+raea godot back DIR   (what changed in Godot's main.tscn since the export, as edits to the TSX at their lines; nodes added there written as media/NAME.glb; --json)
 ```
+
+## raea scene
+
+Access: HEADLESS. Arguments besides flags: 2.
+
+```
+raea scene export EDIT.tsx -o DIR [--composition ID] [--frame N | --at A-B]   (the composition's 3D as data other tools build: DIR/scene.json, each part placed (y up, metres) with its shape, material or light, and the camera; meshes/ and models/ beside it)
+raea scene lint|explain|light EDIT.tsx [--composition ID] [--frame N] [--part NAME] [--json]   (what each 3D part rests on: floating, sunk and clipping parts; light: the scene's lighting)
+```
+
+Flags: `--at` (1), `--composition` (1), `--frame` (1), `--json`, `--part` (1), `-o` (1).
 
 ## raea init
 
@@ -408,16 +425,6 @@ raea export capcut EDIT.tsx [--composition ID] [-o DIR] [--name NAME] [--alpha-c
 ```
 
 Flags: `--alpha-codec` (1), `--composition` (1), `--name` (1), `--no-register`, `-o` (1).
-
-## raea scene
-
-Access: HEADLESS. Arguments besides flags: 2.
-
-```
-raea scene lint|explain|light EDIT.tsx [--composition ID] [--frame N] [--part NAME] [--json]   (what each 3D part rests on: floating, sunk and clipping parts; light: the scene's lighting)
-```
-
-Flags: `--composition` (1), `--frame` (1), `--json`, `--part` (1).
 
 ## raea physics
 
