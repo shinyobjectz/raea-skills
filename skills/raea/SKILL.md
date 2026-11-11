@@ -150,7 +150,8 @@ Rules that keep renders right (`raea guide motion` has all ten, under "The core 
 - Brand: the kit's `--brand-*` variables in `brand/brand.css` (`raea brand DOMAIN` reads them from a site), then
   `import { css } from "./styles.gen"` and Tailwind classes like `bg-brand-bg`.
 - 3D: read [3d.md](3d.md) first; it routes to one file per topic in `3d/`. An asset to fix first (scale, pivot, FBX
-  to .glb) goes through Blender (`raea setup blender`, then [3d/blender.md](3d/blender.md)).
+  to .glb) goes through Blender (`raea setup blender`, then [3d/blender.md](3d/blender.md)); a step can be TypeScript
+  (`raea/blender`). A Godot project is scripted from TypeScript too (`raea setup godot`, then [3d/godot.md](3d/godot.md)).
 - Sound: `raea guide sound` and `raea guide music`; to cut to a song, run `raea song FILE --plot FILE.song.png` and
   time cuts from its map, never a constant BPM. npm packages and React apps: `raea guide apps`.
 - Generated media: `raea guide gen` before the first `raea gen`.
