@@ -11,13 +11,13 @@ or an argument its usage doesn't name, so these lists are what it takes.
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea render EDIT.tsx -o OUT.mp4|OUT.png|OUT.wav|DIR [--audio OUT.wav] [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--layers] [--stage WxH] [--10bit] [--aov] [--alpha] [--kbps N | --quality draft|high|master|0..1] [--clay] [--despite CHECK WHY]   (also: --lite --comps)
+raea render EDIT.tsx -o OUT.mp4|OUT.png|OUT.wav|DIR [--audio OUT.wav] [--frame N | --at A,B] [--composition ID] [--w W] [--h H] [--fps FPS] [--frames N] [--words W.json] [--perception P.json] [--input I.json|inputs.rrl] [--manifest render.json] [--layers] [--stage WxH] [--10bit] [--aov] [--alpha [--alpha-codec prores|hevc|rle|png]] [--kbps N | --quality draft|high|master|0..1] [--clay] [--despite CHECK WHY]   (also: --lite --comps)
 raea render EDIT.tsx --review DIR [--frame N]   (fixed cameras hero, front, right, top, iso, low in colour and clay: DIR/colour.png, clay.png, review.json)
 raea render PAGE.html -o OUT.mp4|OUT.png|DIR [--at A,B] [--alpha]   (an HTML composition)
 raea render --bundle NAME.comp.js -o OUT.png|DIR [--dir DIR] [--frame N]   (a bundle from raea bundle, as render_bundle draws it)
 ```
 
-Flags: `--10bit`, `--alpha`, `--aov`, `--at` (1), `--audio` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--despite` (2), `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--layers`, `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
+Flags: `--10bit`, `--alpha`, `--alpha-codec` (1), `--aov`, `--at` (1), `--audio` (1), `--bundle` (1), `--clay`, `--composition` (1), `--comps`, `--despite` (2), `--dir` (1), `--fps` (1), `--frame` (1), `--frames` (1), `--h` (1), `--input` (1), `--kbps` (1), `--layers`, `--lite`, `--manifest` (1), `--perception` (1), `--quality` (1), `--review` (1), `--stage` (1), `--w` (1), `--words` (1), `-o` (1).
 
 ## raea media
 
@@ -398,6 +398,16 @@ raea export-game EDIT.tsx -o OUT [--target mac-app|mac-cli] [--name NAME] [--ico
 ```
 
 Flags: `--icon` (1), `--keys` (1), `--name` (1), `--no-strip`, `--player` (1), `--target` (1), `-o` (1).
+
+## raea export
+
+Access: HEADLESS. Arguments besides flags: 2.
+
+```
+raea export capcut EDIT.tsx [--composition ID] [-o DIR] [--name NAME] [--alpha-codec prores|hevc|rle|png] [--no-register]   (the composition as a CapCut draft ready in its timeline: its footage and sounds as clips of their own files at their trims and gains, everything raea draws as transparent overlay clips above them; into CapCut's projects, entered in its project list while CapCut is closed, or a draft folder in DIR; the reference render and the overlay movie kept in out/capcut/NAME)
+```
+
+Flags: `--alpha-codec` (1), `--composition` (1), `--name` (1), `--no-register`, `-o` (1).
 
 ## raea scene
 
