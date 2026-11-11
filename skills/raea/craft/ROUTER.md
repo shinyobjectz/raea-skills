@@ -86,6 +86,13 @@ People write notes in their own words, and one note can hold several asks. Befor
    `raea notes check` again until each passes; it also cuts each clip to sign from the newest render, so render first.
    `raea notes post` again shows where each ask stands. A note closes when the person retires it, never when you mark
    it done.
+7. Rounds hold: every round's checks keep running. When `raea notes check` or `raea check` says an ask regressed, it
+   names the commits since the ask passed. Fix the work those commits broke, not the check. `raea render` refuses
+   while a note is to restate, an ask is to check, or an ask has regressed. Render despite one only when the person
+   asks you to, with `--despite n3.2 "why"`. The render's manifest keeps the reason and its post says it. You can't
+   retire a note: `raea notes retire` is the person's, in the app or their own terminal, so say a note is ready with
+   `raea notes post`. Only a redesign the person asked for in their own words (from scratch, start over, redo)
+   replaces an earlier ask's check, and its ask names each one: `replaces: ["n1.1"]`.
 
 Each ask is one of a small set of moves: name it as the ask's `verb`, and do that move to the part or moment it
 names. A note with three asks is three moves, not one:
