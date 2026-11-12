@@ -12,21 +12,37 @@ example
   .gitattributes
   .raea
     workspace
-  controllers
-    .gitkeep
   projects
     .gitkeep
     launch
       .raea
         project
       AGENTS.md
-      brand
+      artifacts
+        .gitkeep
+      assets
         .gitkeep
       brief.ts
-      media
+      components
+        .gitkeep
+      compositions
+        .gitkeep
+      controllers
         .gitkeep
       out
         .gitkeep
+      tsconfig.json
+  shared
+    artifacts
+      .gitkeep
+    assets
+      .gitkeep
+    components
+      .gitkeep
+    compositions
+      .gitkeep
+    controllers
+      .gitkeep
   taste.ts
 ```
 
