@@ -234,3 +234,57 @@ Run a flow board's workflow as it stands through raea gen (ComfyUI). Its outputs
 |---|---|---|
 | `board` | required | the flow board's item id |
 
+## share_link
+
+Access: PAGE, when the person allows agents to share.
+
+Share an item for review: its file goes up to the person's raea storage (Pro or Team) and a link anyone can open is made, raea.io/r/<token>, where reviewers watch it and comment on the picture without an account. Hand the link on as you're asked. Sharing an item that already has a live link adds this file to it as the next version, on the same URL. Good for 30 days unless days says otherwise; downloads off unless download is true; an optional password.
+
+| input | | |
+|---|---|---|
+| `item` | required | the feed item to share (feed_items lists them); its media is the file |
+| `title` | optional | what the reviewer sees as its name; the item's title when left out |
+| `days` | optional | how long the link works, 1 to 365 (30 when left out) |
+| `download` | optional | let reviewers download the file |
+| `password` | optional | a password reviewers must give |
+
+## share_links
+
+Access: PAGE, when the person allows agents to share.
+
+List the person's review links, newest first: each one's url, item, state (live, expired, stopped), views, comments from reviewers, approval and expiry. With item, that item's alone. With link, one link in full: its versions, every comment (guest is a reviewer's) and who viewed it.
+
+| input | | |
+|---|---|---|
+| `item` | optional | only this item's links |
+| `link` | optional | one link's id, in full |
+
+## share_change
+
+Access: PAGE, when the person allows agents to share.
+
+Change a live review link: its title, how many more days it works (from now), downloads on or off, its password (an empty string takes it off). Or stop it (stop: true): the link stops working for everyone at once. Or answer a reviewer's comment on it (reply, with parent: the comment's id), or mark one resolved.
+
+| input | | |
+|---|---|---|
+| `link` | required | the link's id (share_links lists them) |
+| `title` | optional | its new title |
+| `days` | optional | it works this many days from now, 1 to 365 |
+| `download` | optional | let reviewers download the file |
+| `password` | optional | a new password; empty to take it off |
+| `stop` | optional | stop sharing: the link stops working |
+| `reply` | optional | an answer to show on the link's page |
+| `parent` | optional | the comment it answers |
+| `resolve` | optional | a comment's id to mark resolved |
+
+## project_collaborators
+
+Access: PAGE, when the person allows agents to share.
+
+The people invited into this project (Team): list them, invite someone who has a raea account by their GitHub username or email (they reach the project's media once they accept, and the person's GitHub adds them to its repo), or remove someone.
+
+| input | | |
+|---|---|---|
+| `invite` | optional | a GitHub username or email to invite |
+| `remove` | optional | a collaborator's user id to remove (the list gives it) |
+
