@@ -121,7 +121,7 @@ holding projects and controllers. In the raea app a project shows as a channel.
   `raea guide router` once for the order of work.
 
 ## 4. Make an item — HEADLESS
-<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx -->
+<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx apps/direction/src/findings.rs -->
 
 One `.tsx` file whose root registers compositions (`raea init` in a footage project writes the files to start from):
 
@@ -164,7 +164,15 @@ raea render piece.tsx --at 0,45,89 -o frames/                 # stills to look a
 raea render piece.tsx --alpha -o frames/                     # transparent PNGs, for an overlay in another editor
 raea render piece.tsx -o out/piece.mp4 --manifest out/render.json
 raea check out/piece.mp4 --manifest out/render.json --taste ~/.raea/taste/taste.ts -o out/piece.check.json   # P0-P3; exits 1 on a P0 or P1
+raea findings --open                                          # what still stands, from every render and check so far
 ```
+
+In a project, every render and check is kept in its record (`.raea/record/`), so `raea findings` tells you where the
+piece stands without rereading old check files: for each thing rendered or checked, what its last run fixed, what is
+new and what it carries (and since which render). `--open` keeps only what stands, `--about NAME` one part,
+`--check ID` one check, `--since RENDER` sets it against an earlier run, and `--json` is for a script. Read it before
+you fix and after each render; say what it lists rather than "looks good". A render with an error exits 1; when the
+person accepts one, `raea render ... --despite CHECK "why"` lets it through, and findings lists what was let through.
 
 `raea guide rendering` covers stills, the check, bitrate and quality; `raea guide rubric` covers judging the rest.
 
