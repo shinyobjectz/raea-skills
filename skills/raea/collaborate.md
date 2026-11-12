@@ -22,9 +22,16 @@ to reach for each. Headless, with no app, SKILL.md's steps 5 and 6 say what to d
 | map how ideas, options and references connect, a structure to rearrange together | `whiteboard_write` (say what's on it and how it's grouped; the feed lays it out), `whiteboard_read` for what the person drew back. Not for the plan itself: show that as previz, a storyboard or a script |
 | show and tune a ComfyUI workflow the person can see | `flow_board` puts it on a board, `flow_write` changes its settings, `flow_run` runs it through `raea gen` (it spends: [gen.md](gen.md)) |
 | start a new project for a client, a game or a show | `channel_create` from one sentence, when the person asks for one |
+| send a cut to a client or anyone outside raea to watch, comment on and approve | `share_link` on the item (a video, still or sound; on Pro or Team) and hand on the link it gives back; sharing a newer version of the same item puts it on the same link as v2 |
+| see what reviewers said on a link, answer them, or change or stop it | `share_links` (one `link` in full lists its comments), then `share_change` to `reply`, `resolve`, change its days, downloads or password, or `stop` it |
+| bring someone into the project to work in it from their own raea | `project_collaborators` to `invite` a GitHub username or email (Team), list who's in, or `remove` someone; they accept the invite themselves |
 
 ## What the person may have set for you
 
 The person sets, per agent, which of these tools it may use and whether it asks before acting. A tool refused because
 it's off for you is the person's choice: say what you would have done with it and go on without it, rather than
 trying another way round.
+
+Sharing is off for every agent until the person turns on Settings → Sharing → Let agents share. Until then the
+sharing tools refuse and say so: tell the person what you'd share or who you'd invite, and where to turn it on. A
+plan without the feature comes back as `plan_required` with its message: pass that on rather than retrying.
