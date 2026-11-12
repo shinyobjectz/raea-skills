@@ -7,7 +7,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea` (sdk/raea/src/index.tsx)
 
-`ACTION_KEY`, `AbsoluteFill`, `Animate`, `Audio`, `Clock`, `Composition`, `Easing`, `FEED_KEY`, `Freeze`, `Img`, `InputRegion`, `Loop`, `MEDIA_ROOT`, `Mix`, `Nudge`, `Overlay`, `Region`, `SPACE_KEY`, `Sequence`, `Series`, `SongPlot`, `Stagger`, `Video`, `actionsIn`, `applyActions`, `curve`, `curveFn`, `delay`, `fade`, `feedIn`, `fill`, `findPhrase`, `firstDecider`, `fish`, `getCompositions`, `gridDelay`, `inState`, `interpolate`, `isGeneratedAsset`, `keyEdges`, `lyria`, `machine`, `measureSpring`, `move`, `moves`, `overlays`, `parallel`, `pop`, `proofBoxes`, `propsFingerprint`, `pushIn`, `regionBand`, `registerRoot`, `replayDecider`, `reverse`, `rise`, `sampleAnimation`, `sao`, `sequence`, `sequenceGap`, `slam`, `slide`, `song`, `songAt`, `spring`, `stagger`, `stateOf`, `staticFile`, `stepAll`, `strike`, `tick`, `tickClocks`, `timeline`, `toMove`, `track`, `transitionOf`, `useCurrentFrame`, `useGameEvents`, `useGameState`, `useInput`, `useRegion`, `useSong`, `useVideoConfig`, `useWords`, `wipe`, `word`
+`ACTION_KEY`, `AbsoluteFill`, `Animate`, `Audio`, `Clock`, `Composition`, `Easing`, `FEED_KEY`, `Freeze`, `HOLD_TIMEOUT_MS`, `Img`, `InputRegion`, `Loop`, `MEDIA_ROOT`, `Mix`, `Nudge`, `Overlay`, `Region`, `SPACE_KEY`, `Sequence`, `Series`, `SongPlot`, `Stagger`, `Video`, `actionsIn`, `applyActions`, `cancelRender`, `continueRender`, `curve`, `curveFn`, `delay`, `delayRender`, `fade`, `feedIn`, `fill`, `findPhrase`, `firstDecider`, `fish`, `getCompositions`, `gridDelay`, `inState`, `interpolate`, `isGeneratedAsset`, `keyEdges`, `lyria`, `machine`, `measureSpring`, `move`, `moves`, `overlays`, `parallel`, `pop`, `proofBoxes`, `propsFingerprint`, `pushIn`, `regionBand`, `registerRoot`, `replayDecider`, `reverse`, `rise`, `sampleAnimation`, `sao`, `sequence`, `sequenceGap`, `slam`, `slide`, `song`, `songAt`, `spring`, `stagger`, `stateOf`, `staticFile`, `stepAll`, `strike`, `tick`, `tickClocks`, `timeline`, `toMove`, `track`, `transitionOf`, `useCurrentFrame`, `useGameEvents`, `useGameState`, `useInput`, `useRegion`, `useSong`, `useVideoConfig`, `useWords`, `wipe`, `word`
 
 ## `raea/3d` (sdk/raea/src/3d.tsx)
 
@@ -52,6 +52,10 @@ with a capital, hooks with `use`. A component's props are in its file.
 ## `raea/gizmos` (sdk/raea/src/gizmos.ts)
 
 `Gizmo`
+
+## `raea/hold` (sdk/raea/src/hold.ts)
+
+`HOLD_TIMEOUT_MS`, `cancelRender`, `continueRender`, `delayRender`
 
 ## `raea/image` (sdk/raea/src/image.ts)
 
