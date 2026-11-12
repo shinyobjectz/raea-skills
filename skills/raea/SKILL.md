@@ -73,9 +73,12 @@ workspaces already are, else `~/Documents/raea`, or `~/raea` when iCloud keeps D
 holding projects and controllers. In the raea app a project shows as a channel.
 - `raea workspace init NAME` makes one; `raea workspace adopt DIR` makes an existing folder one. `raea workspace`
   shows it (`--json` for the projects and their paths).
-- `raea project new NAME` adds a project: its folder with `brief.ts`, `media/`, `out/` and `brand/`. A project can
-  live inline or as its own repo (`raea project split NAME`, `raea project join NAME`); both keep its history.
-- Work in the project's folder. Footage and other media go in `media/`, renders in `out/`.
+- `raea project new NAME` adds a project: its folder with `brief.ts`, `AGENTS.md`, `compositions/`, `components/`,
+  `controllers/`, `assets/`, `artifacts/` and `out/`. The workspace's `shared/` has the same five folders, which any
+  project imports from as `@shared/components/NAME`. A project can live inline or as its own repo
+  (`raea project split NAME`, `raea project join NAME`); both keep its history.
+- Work in the project's folder. Footage and other media go in `assets/` (`media/` in a project made before the
+  layout), renders in `out/`.
 
 ## 3. Read before you make — HEADLESS
 <!-- sources: engine/cli/src/guide.rs apps/workspace/src core/brief/src -->
