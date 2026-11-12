@@ -56,8 +56,7 @@ leads. raea will add modes as its work grows; `raea context` says when a brief n
    one into the deliverable's brief as a section headed "Direction".
 5. **The floor:** read it right before you edit.
 6. **Make it.**
-7. **Evidence:** run `raea check`, look at the frames, critique against the mode's guide, fix, and look again;
-   `raea findings --open` says what still stands from every render and check so far.
+7. **Evidence:** run `raea check`, look at the frames, critique against the mode's guide, fix, and look again.
    A line the work must keep every round is a rule, not a reminder: a field `{ label, type: "rule", check, values }`
    in the project's controller, whose check is one of raea's by name (`text-above`, `loudness`) or a `.ts` check you
    write with `raea/check` (`check({ id, text }, (world, frame, values) => ...)` and `found(...)`). `raea check

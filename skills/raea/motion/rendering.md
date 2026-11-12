@@ -11,10 +11,6 @@
   with its fix; it exits 1 while a P0 or P1 stands, and `-o check.json` writes them for the critique. An
   exception in the composition (an unclamped value going NaN, keyframes out of order, a phrase `word()` can't find, a
   missing prop) fails the render and names the line.
-- **Where it stands: `raea findings`.** Every render and check in a project goes into its record, and
-  `raea findings --open` lists what still stands across all of them; without `--open` it says what the last run of
-  each thing fixed, what is new and what it carries since which render (`--about NAME` for one part, `--since RENDER`
-  against an earlier run). Read it before fixing and again after the render that should have fixed it.
 - **Watch it as a viewer would once the piece is close.** `raea check` measures; it can't judge a frame cropped too
   tight, speech without captions, text that's hard to read, an ending that stops mid-thought, or whether the message
   lands. Look for those in the stills and the sheet before you answer.
