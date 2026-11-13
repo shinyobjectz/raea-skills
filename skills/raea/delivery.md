@@ -21,7 +21,9 @@ copies of raea's craft guides (`raea guide NAME` prints the same text).
 
 ## The verbs
 
-- `raea render EDIT.tsx -o out/NAME.mp4 --quality master --manifest out/render.json` (HEADLESS), then `raea check`.
+- `raea render EDIT.tsx -o out/NAME.mp4 --quality master --manifest out/render.json` (HEADLESS), then `raea check`:
+  the delivered file. A version made for notes takes no `--quality` flag, and a film delivers at `--quality high`
+  (`raea guide rendering`, "Which to ask for").
 - `raea check FILE --shape 9:16 --platform tiktok|reels|shorts` measures it against where it goes: text under the
   network's buttons, captions too brief to read, loudness.
 - `raea media probe|loudness FILE` to confirm what the file is before it leaves.

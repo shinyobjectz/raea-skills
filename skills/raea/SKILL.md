@@ -284,8 +284,9 @@ least sure of. Once they've answered, `--tally` makes the answers evidence.
 ## 7. Deliver — HEADLESS
 <!-- sources: runtime/export/src -->
 
-- Final exports: `--quality master` for motion graphics and type; name files with lowercase letters, digits and
-  hyphens only (`spring-launch-9x16.mp4`).
+- The delivered file: `--quality master` for motion graphics and type, `--quality high` for a film. A version made
+  for notes takes no `--quality` flag (a fifth of the bytes for the same picture: `raea guide rendering`). Name files
+  with lowercase letters, digits and hyphens only (`spring-launch-9x16.mp4`).
 - A render is a standard MP4 but large: H.264 High and AAC on a Mac (VideoToolbox), H.264 Constrained Baseline and
   Opus on Windows and Linux (openh264), yuv420p on all. Hand over a share copy too, which any player takes:
   `ffmpeg -i film.mp4 -c:v libx264 -preset slow -crf 23 -maxrate 2600k -bufsize 5200k -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart film-share.mp4`.
