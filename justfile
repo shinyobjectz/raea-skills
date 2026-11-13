@@ -47,6 +47,7 @@ fmt:
 # Everything CI runs
 ci: test check
     cargo fmt --all -- --check
+    bash scripts/directory-edition.sh --check || echo "warn: directory/ (the plugin directory's edition) is stale: run just directory"
 
 # ── Skills ─────────────────────────────────────────────
 
@@ -86,7 +87,12 @@ unlink:
 # Check the plugin (skills/) and its marketplace with Claude Code's own validator
 plugin:
     claude plugin validate skills
+    claude plugin validate directory
     claude plugin validate .
+
+# Rebuild directory/, the plugin as Claude's plugin directory takes it (no hooks, no TypeScript kits)
+directory:
+    bash scripts/directory-edition.sh
 
 # Try the plugin in one Claude Code session, without installing it
 plugin-try:

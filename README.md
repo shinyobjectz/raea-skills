@@ -35,7 +35,8 @@ just ci       # run every check
 | `just link` | install this repo's skills into Claude Code, live |
 | `just drift` | after a raea update: re-snapshot, list stale skills |
 | `just word cut` | check a term with montology before using it |
-| `just plugin` | check the Claude plugin (`skills/`) with Claude Code's own validator |
+| `just plugin` | check the Claude plugin (`skills/`, `directory/`) with Claude Code's own validator |
+| `just directory` | rebuild `directory/`, the plugin directory's edition, after changing `skills/raea` |
 
 ## Use it as a Claude plugin
 
@@ -44,10 +45,15 @@ after a composition is saved and send media to `raea show`. Install it in Claude
 `/plugin install raea --marketplace shinyobjectz/raea-skills`; [skills/README.md](skills/README.md) says what it runs.
 A new skill goes in `skills/.claude-plugin/plugin.json`'s `skills` too, or `just check` fails.
 
+`directory/` is the edition Claude's plugin directory takes: the same skill with no hooks and without its TypeScript
+kits, which the directory accepts only from verified organizations. `scripts/directory-edition.sh` builds it from
+`skills/raea`, so run `just directory` after changing the skill and commit the result; `just ci` warns when it's stale.
+
 ## Layout
 
 ```
 skills/         one folder per skill (SKILL.md); the folder is also raea's Claude plugin
+directory/      the plugin as Claude's plugin directory takes it, built by `just directory` (don't edit by hand)
 features/       behaviour specs in Gherkin (Given / When / Then)
 crates/         skillcheck — the Rust checker and test runner
 upstream/raea/  snapshot of the raea these skills are checked against
