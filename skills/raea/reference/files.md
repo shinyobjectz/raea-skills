@@ -5,7 +5,8 @@
 ## A workspace and its project
 
 What `raea workspace init Example` and then `raea project new Launch` make, under raea.root (`git config
---global raea.root`, else ~/Studio). The workspace is one git repo; media/ and out/ go to LFS.
+--global raea.root`; unset, ~/Studio where workspaces already are, else ~/Documents/raea, or ~/raea when iCloud
+keeps Documents). The workspace is one git repo; media/ and out/ go to LFS.
 
 ```
 example
