@@ -182,7 +182,9 @@ person accepts one, `raea render ... --despite CHECK "why"` lets it through, and
 
 Before you post a cut, score it with the person's fingerprint, what raea has learned of their eye on this machine
 from their notes, marks and approvals: `raea fingerprint score out/piece.mp4` lists the moments it expects a note on,
-each named in the person's own words, beside raea check's findings. Fix each gating moment, or say why you didn't, and
+each named in the person's own words, beside raea check's findings. On a picture axis that has learned where, a moment
+also says where in the frame and, on a render with a layer pass, the layers there ("top right on Floor"): start the fix
+with that layer. Fix each gating moment, or say why you didn't, and
 score the fix against the cut before: `raea fingerprint score out/v2.mp4 --was out/v1.mp4` says whether each flag is
 fixed, still there, or looks disguised (nearer the axis's disguised defects than clean work, so the fix hid the defect
 rather than removing its cause); only a fixed flag is fixed. `raea fingerprint which out/piece.mp4` names the fingerprint that judges this piece (the
