@@ -180,6 +180,15 @@ new and what it carries (and since which render). `--open` keeps only what stand
 you fix and after each render; say what it lists rather than "looks good". A render with an error exits 1; when the
 person accepts one, `raea render ... --despite CHECK "why"` lets it through, and findings lists what was let through.
 
+Before you post a cut, score it with the person's fingerprint, what raea has learned of their eye on this machine
+from their notes, marks and approvals: `raea fingerprint score out/piece.mp4` lists the moments it expects a note on,
+each named in the person's own words, beside raea check's findings. Fix each gating moment, or say why you didn't, and
+score the fix again. `raea fingerprint which out/piece.mp4` names the fingerprint that judges this piece (the
+project's, the workspace's, then the person's own) and why. Tell the person the axis and the moment, never a score.
+`raea fingerprint report` says what each axis has learned and what it can't judge yet. A fingerprint's axes are
+~/.raea/fingerprints/NAME/fingerprint.ts, typed by `raea/fingerprint`: add, remove or reword an axis there, never its
+evidence.
+
 `raea guide rendering` covers stills, the check, bitrate and quality; `raea guide rubric` covers judging the rest.
 
 ## 5. Show it and read the notes — PAGE, PERSON
