@@ -127,7 +127,7 @@ holding projects and controllers. In the raea app a project shows as a channel.
   `raea guide router` once for the order of work.
 
 ## 4. Make an item — HEADLESS
-<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx apps/direction/src/findings.rs -->
+<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx apps/direction/src/findings.rs apps/fingerprint/src systems/fingerprint-things/src -->
 
 One `.tsx` file whose root registers compositions (`raea init` in a footage project writes the files to start from):
 
@@ -189,7 +189,15 @@ rather than removing its cause); only a fixed flag is fixed. `raea fingerprint w
 project's, the workspace's, then the person's own) and why. Tell the person the axis and the moment, never a score.
 `raea fingerprint report` says what each axis has learned and what it can't judge yet. A fingerprint's axes are
 ~/.raea/fingerprints/NAME/fingerprint.ts, typed by `raea/fingerprint`: add, remove or reword an axis there, never its
-evidence.
+evidence. A script or brief scores on text axes only, and raea's own axes read pictures and sound, so a script scores
+only once the person has added an axis that reads text.
+
+For a 3D shot, check how its things sit and move. Render it with `--layers`, and render `--aov -o out/shot.aov` beside
+it. Then run `raea fingerprint things out/shot.mp4 --json > things.json` and
+`raea check out/shot.mp4 --things things.json`. It finds a thing floating or passing through another, the camera
+lurching mid-move, and an empty frame. When the person says a project is finished,
+`raea fingerprint postmortem PROJECT` asks them at most ten yes/no questions in the app about what the fingerprint is
+least sure of. Once they've answered, `--tally` makes the answers evidence.
 
 `raea guide rendering` covers stills, the check, bitrate and quality; `raea guide rubric` covers judging the rest.
 
