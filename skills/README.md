@@ -18,12 +18,14 @@ a game, or renders single frames to check. This plugin teaches Claude to use rae
 
 ## Install the plugin
 
-Add it from the plugin directory: **Customize > Plugins** on claude.ai, or `/plugin directory` in Claude Code. Or install
-it straight from this repository in Claude Code (2.1.275 or later):
+Install it from this repository in Claude Code (2.1.275 or later):
 
 ```
 /plugin install raea --marketplace shinyobjectz/raea-skills
 ```
+
+Once Claude's plugin directory lists it, you can also add it from **Customize > Plugins** on claude.ai, or with
+`/plugin directory` in Claude Code.
 
 ## Install raea
 

@@ -39,9 +39,10 @@ This is called *progressive disclosure*: small label, bigger body, deepest detai
 | `<project>/.claude/skills/` | Anyone working in that project |
 | A plugin (like i-have-adhd) | Whoever installs the plugin |
 
-This repo's `skills/` folder is itself a plugin, `raea`, listed in Claude's plugin
-directory: whoever installs it gets the skills its manifest
-(`skills/.claude-plugin/plugin.json`) lists, plus raea's hooks.
+This repo's `skills/` folder is itself a plugin, `raea`, which installs from this
+repo as a marketplace and is submitted to Claude's plugin directory: whoever
+installs it gets the skills its manifest (`skills/.claude-plugin/plugin.json`)
+lists, plus raea's hooks.
 
 `just link` puts this repo's skills into `~/.claude/skills/` as links, so your
 edits apply the next session — no copying.
