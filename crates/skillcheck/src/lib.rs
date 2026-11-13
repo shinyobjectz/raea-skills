@@ -311,13 +311,15 @@ pub fn check_skill(dir: &Path, upstream: Option<&Upstream>) -> Vec<Finding> {
     out
 }
 
-/// Checks every skill under `skills_dir` (folders starting with `_` or `.` are skipped).
+/// Checks every skill under `skills_dir` (folders starting with `_` or `.` are skipped, and so are the plugin's own
+/// folders when `skills_dir` is a Claude plugin), then the plugin's manifest.
 pub fn check_repo(skills_dir: &Path, upstream_dir: &Path) -> Result<Report> {
     let upstream = Upstream::load(upstream_dir)?;
     let mut report = Report::default();
     if !skills_dir.exists() {
         return Ok(report);
     }
+    let plugin = skills_dir.join(PLUGIN_MANIFEST).is_file();
     let mut dirs: Vec<_> = fs::read_dir(skills_dir)
         .with_context(|| format!("reading {}", skills_dir.display()))?
         .filter_map(|e| e.ok())
@@ -325,15 +327,89 @@ pub fn check_repo(skills_dir: &Path, upstream_dir: &Path) -> Result<Report> {
         .filter(|p| p.is_dir())
         .filter(|p| {
             let n = p.file_name().unwrap_or_default().to_string_lossy();
-            !n.starts_with('_') && !n.starts_with('.')
+            !n.starts_with('_')
+                && !n.starts_with('.')
+                && !(plugin && PLUGIN_DIRS.contains(&n.as_ref()))
         })
         .collect();
     dirs.sort();
+    let mut names = Vec::new();
     for dir in dirs {
         report.skills_checked += 1;
         report.findings.extend(check_skill(&dir, upstream.as_ref()));
+        names.push(
+            dir.file_name()
+                .unwrap_or_default()
+                .to_string_lossy()
+                .to_string(),
+        );
+    }
+    if plugin {
+        report.findings.extend(check_plugin(skills_dir, &names));
     }
     Ok(report)
+}
+
+/// The manifest that makes the skills folder a Claude plugin, relative to it.
+pub const PLUGIN_MANIFEST: &str = ".claude-plugin/plugin.json";
+/// The plugin's own folders beside the skills, which aren't skills.
+pub const PLUGIN_DIRS: &[&str] = &["hooks"];
+
+/// Checks the plugin manifest: it parses, has a name, and its `skills` lists every skill folder and nothing else, so
+/// no skill is left out of the plugin and no entry points at a skill that's gone.
+pub fn check_plugin(skills_dir: &Path, skills: &[String]) -> Vec<Finding> {
+    let mut out = Vec::new();
+    let mut fail = |message: String| {
+        out.push(Finding {
+            level: Level::Error,
+            skill: "plugin".into(),
+            message,
+        })
+    };
+    let path = skills_dir.join(PLUGIN_MANIFEST);
+    let manifest: serde_yaml::Value = match fs::read_to_string(&path)
+        .map_err(|e| e.to_string())
+        .and_then(|t| serde_yaml::from_str(&t).map_err(|e| e.to_string()))
+    {
+        Ok(v) => v,
+        Err(e) => {
+            fail(format!("{PLUGIN_MANIFEST} doesn't parse: {e}"));
+            return out;
+        }
+    };
+    if manifest
+        .get("name")
+        .and_then(|n| n.as_str())
+        .is_none_or(str::is_empty)
+    {
+        fail(format!("{PLUGIN_MANIFEST} has no `name`"));
+    }
+    let listed: Vec<&str> = match manifest.get("skills") {
+        Some(serde_yaml::Value::String(s)) => vec![s.as_str()],
+        Some(serde_yaml::Value::Sequence(v)) => v.iter().filter_map(|s| s.as_str()).collect(),
+        _ => Vec::new(),
+    };
+    let folder = |entry: &str| {
+        entry
+            .trim_start_matches("./")
+            .trim_end_matches('/')
+            .to_string()
+    };
+    for name in skills {
+        if !listed.iter().any(|e| folder(e) == *name) {
+            fail(format!(
+                "skills/{name} isn't in the plugin's skills ({PLUGIN_MANIFEST}): add \"./{name}\", or the plugin ships without it"
+            ));
+        }
+    }
+    for entry in listed {
+        if !skills_dir.join(folder(entry)).join("SKILL.md").is_file() {
+            fail(format!(
+                "the plugin's skills list {entry:?}, which holds no SKILL.md"
+            ));
+        }
+    }
+    out
 }
 
 #[cfg(test)]

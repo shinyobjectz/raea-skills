@@ -58,6 +58,23 @@ fn empty_folder(lib: &mut Library, name: String) {
     fs::create_dir_all(lib.root().join("skills").join(name)).unwrap();
 }
 
+#[given(expr = "the plugin manifest lists the skills {string}")]
+fn plugin_lists(lib: &mut Library, entries: String) {
+    let list: Vec<String> = entries
+        .split_whitespace()
+        .map(|e| format!("{e:?}"))
+        .collect();
+    let manifest = format!("{{\"name\": \"raea\", \"skills\": [{}]}}", list.join(", "));
+    plugin_manifest(lib, manifest);
+}
+
+#[given(expr = "the plugin manifest is {string}")]
+fn plugin_manifest(lib: &mut Library, text: String) {
+    let dir = lib.root().join("skills/.claude-plugin");
+    fs::create_dir_all(&dir).unwrap();
+    fs::write(dir.join("plugin.json"), text).unwrap();
+}
+
 #[when("I run the skill check")]
 fn run_check(lib: &mut Library) {
     let root = lib.root();
