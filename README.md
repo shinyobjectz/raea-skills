@@ -35,11 +35,19 @@ just ci       # run every check
 | `just link` | install this repo's skills into Claude Code, live |
 | `just drift` | after a raea update: re-snapshot, list stale skills |
 | `just word cut` | check a term with montology before using it |
+| `just plugin` | check the Claude plugin (`skills/`) with Claude Code's own validator |
+
+## Use it as a Claude plugin
+
+`skills/` is raea's plugin for Claude: the skills its manifest lists, plus hooks that run raea's quick check
+after a composition is saved and send media to `raea show`. Install it in Claude Code with
+`/plugin install raea --marketplace shinyobjectz/raea-skills`; [skills/README.md](skills/README.md) says what it runs.
+A new skill goes in `skills/.claude-plugin/plugin.json`'s `skills` too, or `just check` fails.
 
 ## Layout
 
 ```
-skills/         one folder per skill (SKILL.md)
+skills/         one folder per skill (SKILL.md); the folder is also raea's Claude plugin
 features/       behaviour specs in Gherkin (Given / When / Then)
 crates/         skillcheck — the Rust checker and test runner
 upstream/raea/  snapshot of the raea these skills are checked against

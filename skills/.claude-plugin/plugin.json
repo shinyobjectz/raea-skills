@@ -1,0 +1,19 @@
+{
+  "name": "raea",
+  "displayName": "raea",
+  "description": "Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine: the raea skill, and hooks that run raea's quick check on a composition after it's saved and show media in the raea app instead of the Mac's viewer.",
+  "author": {
+    "name": "raea",
+    "url": "https://raea.io"
+  },
+  "homepage": "https://raea.io",
+  "repository": "https://github.com/shinyobjectz/raea-skills",
+  "license": "Apache-2.0",
+  "keywords": ["video", "motion-graphics", "3d", "games", "rendering", "bevy", "react", "typescript"],
+  "icon": "./icon.png",
+  "documentationUrl": "https://raea.io/docs/",
+  "supportUrl": "https://github.com/shinyobjectz/raea-skills/issues",
+  "privacyPolicyUrl": "https://raea.io/privacy/",
+  "termsOfServiceUrl": "https://raea.io/terms/",
+  "skills": ["./raea"]
+}

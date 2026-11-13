@@ -68,6 +68,7 @@ link:
     mkdir -p ~/.claude/skills
     for d in skills/*/; do
       n="$(basename "$d")"; [[ "$n" == _* ]] && continue
+      [ -f "skills/$n/SKILL.md" ] || continue  # the plugin's hooks/ isn't a skill
       ln -sfn "$PWD/skills/$n" ~/.claude/skills/"$n"
       echo "linked $n"
     done
@@ -79,6 +80,17 @@ unlink:
       n="$(basename "$d")"
       [ -L ~/.claude/skills/"$n" ] && rm ~/.claude/skills/"$n" && echo "unlinked $n"
     done; true
+
+# ── The Claude plugin ──────────────────────────────────
+
+# Check the plugin (skills/) and its marketplace with Claude Code's own validator
+plugin:
+    claude plugin validate skills
+    claude plugin validate .
+
+# Try the plugin in one Claude Code session, without installing it
+plugin-try:
+    claude --plugin-dir skills
 
 # ── Tracking raea ──────────────────────────────────────
 
