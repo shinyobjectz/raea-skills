@@ -9,6 +9,14 @@ they see it, and you help them teach it. Every command is in [reference/cli.md](
 Each step says where it runs, as in SKILL.md: **HEADLESS** (the CLI alone), **PAGE** (their feed open), **PERSON**
 (only they can do it).
 
+## What it reads
+
+Every axis reads one sense, on this Mac: pictures through SigLIP 2, sound through CLAP and YAMNet, motion from the
+frames, and text (scripts, briefs) through EmbeddingGemma 2. Each axis judges a two-second moment, so a file is judged
+only on the senses it has, and a whole piece's story or pace isn't judged at all. Picture axes can learn where in the
+frame; sound axes judge the whole sound in each moment. raea has no shipped axis for whether a sound is recorded or
+generated: never tell the person the fingerprint says a sound is real, or AI-made.
+
 ## Before you post a cut — HEADLESS
 
 ```sh
