@@ -1,0 +1,18 @@
+{
+  "name": "raea",
+  "displayName": "raea",
+  "description": "Make video, motion graphics, games and 3D scenes with raea, the Render Anything Engine: write React and TypeScript compositions and render them on your computer's GPU, play games live, cut footage by its words and check every frame.",
+  "author": {
+    "name": "raea",
+    "url": "https://raea.io"
+  },
+  "homepage": "https://raea.io",
+  "repository": "https://github.com/shinyobjectz/raea-skills",
+  "license": "Apache-2.0",
+  "keywords": ["video", "motion-graphics", "3d", "games", "rendering", "bevy", "react", "typescript"],
+  "icon": "./icon.png",
+  "documentationUrl": "https://raea.io/docs/",
+  "supportUrl": "https://github.com/shinyobjectz/raea-skills/issues",
+  "privacyPolicyUrl": "https://raea.io/privacy/",
+  "termsOfServiceUrl": "https://raea.io/terms/"
+}

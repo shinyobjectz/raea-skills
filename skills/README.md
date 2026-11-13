@@ -24,8 +24,9 @@ Install it from this repository in Claude Code (2.1.275 or later):
 /plugin install raea --marketplace shinyobjectz/raea-skills
 ```
 
-Once Claude's plugin directory lists it, you can also add it from **Customize > Plugins** on claude.ai, or with
-`/plugin directory` in Claude Code.
+Claude's plugin directory carries an edition of this plugin without the hooks and the skill's TypeScript kits
+(`directory/` in the repository), since it takes neither from an organization Anthropic hasn't verified. Once it's
+listed, you can add that edition from **Customize > Plugins** on claude.ai, or with `/plugin directory` in Claude Code.
 
 ## Install raea
 

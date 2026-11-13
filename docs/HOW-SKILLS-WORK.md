@@ -40,9 +40,10 @@ This is called *progressive disclosure*: small label, bigger body, deepest detai
 | A plugin (like i-have-adhd) | Whoever installs the plugin |
 
 This repo's `skills/` folder is itself a plugin, `raea`, which installs from this
-repo as a marketplace and is submitted to Claude's plugin directory: whoever
-installs it gets the skills its manifest (`skills/.claude-plugin/plugin.json`)
-lists, plus raea's hooks.
+repo as a marketplace: whoever installs it gets the skills its manifest
+(`skills/.claude-plugin/plugin.json`) lists, plus raea's hooks. Claude's plugin
+directory gets `directory/`, an edition built from it with no hooks and no
+TypeScript kits, since the directory takes those only from verified organizations.
 
 `just link` puts this repo's skills into `~/.claude/skills/` as links, so your
 edits apply the next session — no copying.
