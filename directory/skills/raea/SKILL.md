@@ -62,6 +62,7 @@ task needs.
 | generated images, video, sound or meshes | [gen.md](gen.md) |
 | the export, the share copy, platform specs, posting a deliverable | [delivery.md](delivery.md) |
 | working with the person in the raea app: the feed, controllers, the editor, boards | [collaborate.md](collaborate.md) |
+| checking a cut against the person's taste, reading their notes on a sound, or teaching their fingerprint | [fingerprint.md](fingerprint.md) |
 
 Across all of them, `craft/`: [craft/ROUTER.md](craft/ROUTER.md) is how to decide what to make (the order of work and
 reading notes); [craft/floor.md](craft/floor.md) is read right before every edit; `craft/modes/` says what a pitch,
@@ -188,7 +189,8 @@ with that layer. Fix each gating moment, or say why you didn't, and
 score the fix against the cut before: `raea fingerprint score out/v2.mp4 --was out/v1.mp4` says whether each flag is
 fixed, still there, or looks disguised (nearer the axis's disguised defects than clean work, so the fix hid the defect
 rather than removing its cause); only a fixed flag is fixed. `raea fingerprint which out/piece.mp4` names the fingerprint that judges this piece (the
-project's, the workspace's, then the person's own) and why. Tell the person the axis and the moment, never a score.
+project's, the workspace's, then the person's own) and why. Tell the person the axis and the moment, never a score. [fingerprint.md](fingerprint.md) has the rest: reading a
+note's box on the sound, teaching the fingerprint, and keeping one with a project.
 `raea fingerprint report` says what each axis has learned and what it can't judge yet. A fingerprint's axes are
 ~/.raea/fingerprints/NAME/fingerprint.ts, typed by `raea/fingerprint`: add, remove or reword an axis there, never its
 evidence. A script or brief scores on text axes only, and raea's own axes read pictures and sound, so a script scores
