@@ -127,7 +127,7 @@ holding projects and controllers. In the raea app a project shows as a channel.
   `raea guide router` once for the order of work.
 
 ## 4. Make an item — HEADLESS
-<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx apps/direction/src/findings.rs -->
+<!-- sources: sdk/raea/src/index.tsx sdk/raea/src/3d.tsx apps/direction/src/findings.rs apps/fingerprint/src systems/fingerprint-things/src -->
 
 One `.tsx` file whose root registers compositions (`raea init` in a footage project writes the files to start from):
 
@@ -179,6 +179,27 @@ new and what it carries (and since which render). `--open` keeps only what stand
 `--check ID` one check, `--since RENDER` sets it against an earlier run, and `--json` is for a script. Read it before
 you fix and after each render; say what it lists rather than "looks good". A render with an error exits 1; when the
 person accepts one, `raea render ... --despite CHECK "why"` lets it through, and findings lists what was let through.
+
+Before you post a cut, score it with the person's fingerprint, what raea has learned of their eye on this machine
+from their notes, marks and approvals: `raea fingerprint score out/piece.mp4` lists the moments it expects a note on,
+each named in the person's own words, beside raea check's findings. On a picture axis that has learned where, a moment
+also says where in the frame and, on a render with a layer pass, the layers there ("top right on Floor"): start the fix
+with that layer. Fix each gating moment, or say why you didn't, and
+score the fix against the cut before: `raea fingerprint score out/v2.mp4 --was out/v1.mp4` says whether each flag is
+fixed, still there, or looks disguised (nearer the axis's disguised defects than clean work, so the fix hid the defect
+rather than removing its cause); only a fixed flag is fixed. `raea fingerprint which out/piece.mp4` names the fingerprint that judges this piece (the
+project's, the workspace's, then the person's own) and why. Tell the person the axis and the moment, never a score.
+`raea fingerprint report` says what each axis has learned and what it can't judge yet. A fingerprint's axes are
+~/.raea/fingerprints/NAME/fingerprint.ts, typed by `raea/fingerprint`: add, remove or reword an axis there, never its
+evidence. A script or brief scores on text axes only, and raea's own axes read pictures and sound, so a script scores
+only once the person has added an axis that reads text.
+
+For a 3D shot, check how its things sit and move. Render it with `--layers`, and render `--aov -o out/shot.aov` beside
+it. Then run `raea fingerprint things out/shot.mp4 --json > things.json` and
+`raea check out/shot.mp4 --things things.json`. It finds a thing floating or passing through another, the camera
+lurching mid-move, and an empty frame. When the person says a project is finished,
+`raea fingerprint postmortem PROJECT` asks them at most ten yes/no questions in the app about what the fingerprint is
+least sure of. Once they've answered, `--tally` makes the answers evidence.
 
 `raea guide rendering` covers stills, the check, bitrate and quality; `raea guide rubric` covers judging the rest.
 

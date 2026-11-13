@@ -31,7 +31,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/brief` (sdk/raea/src/brief.ts)
 
-`brief`, `controller`, `plan`, `script`, `taste`
+`brief`, `controller`, `fingerprint`, `plan`, `script`, `taste`
 
 ## `raea/camera` (sdk/raea/src/camera.ts)
 
@@ -48,6 +48,10 @@ with a capital, hooks with `use`. A component's props are in its file.
 ## `raea/feathers` (sdk/raea/src/feathers.ts)
 
 `AngleDegrees`, `Dimensionless`, `FeathersButton`, `FeathersCheckbox`, `FeathersColorInput`, `FeathersColorPlane`, `FeathersColorSlider`, `FeathersColorSwatch`, `FeathersDisclosureToggle`, `FeathersLazyMenu`, `FeathersListRow`, `FeathersListView`, `FeathersMenu`, `FeathersMenuButton`, `FeathersMenuDivider`, `FeathersMenuItem`, `FeathersMenuPopup`, `FeathersMenuToolButton`, `FeathersNumberInput`, `FeathersRadio`, `FeathersScrollbar`, `FeathersSelect`, `FeathersSlider`, `FeathersTextInput`, `FeathersTextInputContainer`, `FeathersToggleSwitch`, `FeathersToolButton`, `LengthMeters`, `NumberInputRange`, `NumberInputValue`, `StandardUnitKind`, `ThemeBackgroundColor`, `ThemeBorderColor`, `ThemeContext`, `ThemeTextColor`, `ThemedText`, `TimeSeconds`, `UiTheme`, `VirtualKeyboard`, `caption`, `channel_range`, `context_color`, `create_dark_theme`, `flex_spacer`, `fonts`, `gradient_ends`, `group`, `group_body`, `group_header`, `icon`, `icon_untinted`, `icons`, `label`, `label_dim`, `label_small`, `list_rows_from_strings`, `palette`, `pane`, `pane_body`, `pane_header`, `pane_header_divider`, `size`, `slider_label`, `subpane`, `subpane_body`, `subpane_header`, `to_border_radius`, `tokens`, `useInheritedColor`, `useThemeColor`
+
+## `raea/fingerprint` (sdk/raea/src/fingerprint.ts)
+
+`fingerprint`
 
 ## `raea/gizmos` (sdk/raea/src/gizmos.ts)
 
