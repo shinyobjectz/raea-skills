@@ -26,6 +26,9 @@ to reach for each. Headless, with no app, SKILL.md's steps 5 and 6 say what to d
 | send a cut to a client or anyone outside raea to watch, comment on and approve | `share_link` on the item (a video, still or sound; on Pro or Team) and hand on the link it gives back; sharing a newer version of the same item puts it on the same link as v2 |
 | see what reviewers said on a link, answer them, or change or stop it | `share_links` (one `link` in full lists its comments), then `share_change` to `reply`, `resolve`, change its days, downloads or password, or `stop` it |
 | bring someone into the project to work in it from their own raea | `project_collaborators` to `invite` a GitHub username or email (Team), list who's in, or `remove` someone; they accept the invite themselves |
+| know what raea keeps on this Mac and in raea's cloud, and whether the project's files are synced | `storage_status`; the person syncs, with Sync now in Settings → Storage |
+| make room: old renders, earlier versions, frame folders, half-written files | `storage_plan` (a dry run with an id), show the person its list, then with their yes `storage_trash` with the id and the paths they agreed to; the person moves them to the Trash. Never `rm` a render or a version ([delivery.md](delivery.md), "Old versions, and making room") |
+| bring clips from a card, a drive or another folder into the project | `footage_add` with their paths: first as a dry run (clone or copy, and the space it takes), then with `go`. To leave them where they are, link the folder as a library instead (`raea library add LIBRARY PATH`) |
 
 ## What the person may have set for you
 
