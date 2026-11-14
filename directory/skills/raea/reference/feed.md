@@ -148,7 +148,7 @@ Make a channel (a client, a game, a show) from one sentence on what it is. Retur
 
 Access: PAGE.
 
-What the person has open in the composition editor right now: the composition, its version file, the playhead (seconds), the part they picked in the frame (id, name, box as fractions of the frame, any unsaved move/scale), and how many unsaved changes there are. Read it when they say "this", "here" or "the selected one".
+What the person has open in the composition editor right now: the composition, its version file, the playhead (seconds), the part they picked in the frame (id, name, box as fractions of the frame, any unsaved move/scale), and how many unsaved changes there are. Read it when they say "this", "here" or "the selected one". With a timeline open under a film, a scene or a sound, it also gives `timeline`: the item, fps, the playhead and length in frames, each track and its clips by id (start and length in frames, their speed and keyed properties), the picked clips, and how many edits stand unsent.
 
 No input.
 
@@ -156,7 +156,7 @@ No input.
 
 Access: PAGE.
 
-Change the composition open in the editor, the way the person does, in the version they're editing: it shows on their picture and their undo takes it back, and it's saved with their changes. Move, scale or fade a part on the picture (`part`: an id from editor_selection's parts; dx/dy in pixels, scale/opacity as multipliers), or move, trim, split or delete a <Sequence> on the timeline (`clip`: an i from editor_selection's clips; from/to/split in seconds, delete: true). One change a call. Read editor_selection first.
+Change the composition open in the editor, the way the person does, in the version they're editing: it shows on their picture and their undo takes it back, and it's saved with their changes. Move, scale or fade a part on the picture (`part`: an id from editor_selection's parts; dx/dy in pixels, scale/opacity as multipliers), or move, trim, split or delete a <Sequence> on the timeline (`clip`: an i from editor_selection's clips; from/to/split in seconds, delete: true). Or, on the open timeline, make any of its edits as one step with `ops`: a list of raea/editor operations on the clip ids and frames editor_selection's `timeline` gives (`{ op: "split", at: 90, ids: ["seq-2"] }`, `{ op: "move", ids, by }`, `{ op: "trim", id, edge: "start"|"end", to }`, `{ op: "remove", ids }`, `{ op: "set", id, set: { speed, volume, props } }`, `{ op: "key", id, prop, at, value, ease }`, `{ op: "transition", ... }`); they land in the person's undo history, the clips they touch light up, and Send carries them with the person's. One change a call (one `ops` list is one change). Read editor_selection first.
 
 | input | | |
 |---|---|---|
@@ -170,6 +170,7 @@ Change the composition open in the editor, the way the person does, in the versi
 | `to` | optional | the clip's new end, seconds |
 | `split` | optional | split the clip here, seconds |
 | `delete` | optional | delete the clip |
+| `ops` | optional | raea/editor operations on the open timeline's clip ids (editor_selection's timeline), made as one step |
 
 ## feed_items
 

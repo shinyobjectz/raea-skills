@@ -220,7 +220,7 @@ Flags: `--png` (1), `--script` (1), `--size` (1), `--target` (1), `-o` (1).
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is)
+raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini|grokbot [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is; grokbot, the Grok Bot app, keeps its skills on its own computer, so its copy is staged on this Mac (RAEA_GROKBOT_HOME moves it) with the grokbot:// links that finish it in Grok Bot, and gets no hooks or MCP server)
 ```
 
 Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
@@ -230,7 +230,7 @@ Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).
 Access: HEADLESS. Arguments besides flags: 1.
 
 ```
-raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is)
+raea skill [NAME] [--reference cli|feed|files|sdk] | raea skills install --agent claude|codex|kimi|gemini|grokbot [--pin MOVE]... [--no-mcp] [--no-hooks]   (the agent skill this raea ships, for its version, which raea --version prints: an agent whose copy names another version reads this; install puts raea's skills where that agent reads skills, adds the blender MCP server unless --no-mcp, makes each --pin MOVE a /MOVE of its own, and adds raea's hooks to that agent unless --no-hooks (raea hook AGENT: media opened in the Mac's viewer goes to raea show, and the quick check after a composition is saved); a skill folder that's a link is left as it is; grokbot, the Grok Bot app, keeps its skills on its own computer, so its copy is staged on this Mac (RAEA_GROKBOT_HOME moves it) with the grokbot:// links that finish it in Grok Bot, and gets no hooks or MCP server)
 ```
 
 Flags: `--agent` (1), `--no-hooks`, `--no-mcp`, `--pin` (1), `--reference` (1).

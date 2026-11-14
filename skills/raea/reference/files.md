@@ -59,6 +59,7 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/actions.jsonl` |  | io/shell/src/fs/mod.rs |
 | `~/.raea/app-host.json` |  | apps/app/host/host-file.ts, engine/cli/src/app.ts |
 | `~/.raea/app-prefs.json` | `RAEA_APP_PREFS` | apps/app/host/app-prefs.ts |
+| `~/.raea/avatars` | `RAEA_AVATARS` | apps/app/host/avatars.ts |
 | `~/.raea/bin` |  | io/assets/src/lib.rs, runtime/bundle/lib/src/lib.rs, runtime/page/src/faces.rs |
 | `~/.raea/cache` |  | apps/app/host/take.ts |
 | `~/.raea/env` | `RAEA_ENV_FILE` | apps/app/host/director.ts, apps/app/host/plugins.ts, io/gen-core/src/fal.rs, io/gen-core/src/fish.rs, io/gen-core/src/made.rs, io/gen-core/src/modal.rs, io/gen-core/src/openrouter.rs, io/gen-core/src/replicate.rs, io/gen-core/src/tripo.rs, io/home/src/lib.rs |
