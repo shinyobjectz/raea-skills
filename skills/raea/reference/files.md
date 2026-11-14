@@ -85,11 +85,13 @@ that moves each (when there is one) and the files that name them.
 | `~/.raea/publish/drive.json` | `RAEA_DRIVE_PICKS` | apps/app/host/publish-source.ts |
 | `~/.raea/publish/ready.json` | `RAEA_PUBLISH_READY` | apps/app/host/publish-ready.ts |
 | `~/.raea/sessions` | `RAEA_SESSIONS_DIR` | apps/app/host/sessions.ts |
+| `~/.raea/storage-log.jsonl` | `RAEA_STORAGE_LOG` | apps/app/host/storage/trash.ts |
 | `~/.raea/storage-used.json` | `RAEA_STORAGE_USED` | apps/app/host/storage/back.ts |
-| `~/.raea/storage.json` | `RAEA_STORAGE_FILE` | apps/app/host/storage/service.ts |
+| `~/.raea/storage.json` | `RAEA_STORAGE_FILE` | apps/app/host/storage/plan.ts, apps/app/host/storage/service.ts |
 | `~/.raea/taste` | `RAEA_TASTE` | apps/app/host/taste.ts, engine/cli/src/spec.rs |
 | `~/.raea/taste/corrections.jsonl` |  | apps/app/host/taste.ts |
 | `~/.raea/taste/taste.ts` |  | engine/cli/src/guide.rs |
+| `~/.raea/trash` | `RAEA_TRASH_DIR` | apps/app/host/storage/trash.ts, apps/app/host/storage/usage.ts |
 | `~/.raea/update` | `RAEA_UPDATE_DIR` | apps/app/host/onboard.ts, apps/app/host/update.ts |
 | `~/.raea/usage-queue.json` |  | apps/app/host/telemetry.ts |
 

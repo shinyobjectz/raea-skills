@@ -278,6 +278,49 @@ Change a live review link: its title, how many more days it works (from now), do
 | `parent` | optional | the comment it answers |
 | `resolve` | optional | a comment's id to mark resolved |
 
+## storage_status
+
+Access: HOST.
+
+What raea keeps on this Mac and in its cloud: every byte by place (projects' files, Git LFS's second copies, the feed's renders, drafts, light copies, playback copies), the cloud's room on the person's plan, and this project's media files each with its state: synced (here and in raea's cloud), upload (committed, not sent yet), uncommitted (new or changed), cloud (only in raea's cloud: a pointer here, back when opened), local (this Mac only: Free, or not saved to raea), unchecked (raea's cloud couldn't be asked). Read it before rendering big or when the person asks where space went.
+
+| input | | |
+|---|---|---|
+| `max` | optional | how many of the project's files to list, biggest first (50 when left out) |
+
+## storage_plan
+
+Access: HOST.
+
+A dry run of old and unused files: feed renders no item names, earlier versions in a project's out/ that nothing names, frame folders and half-written .part files a render left. Each with its path, size, class and why it counts as dead, where raea looked for anything naming it, and the list's id. Never listed: anything an item, note, version or source names, final work (exports, masters), the newest of a name's versions, anything opened or changed in the last week, a project's sources. Moves nothing.
+
+| input | | |
+|---|---|---|
+| `max` | optional | how many candidates to list, biggest first (300 when left out) |
+
+## storage_trash
+
+Access: HOST, then PERSON (they confirm in Settings › Storage).
+
+Ask the person to move files from a storage_plan list to the Trash. Moves nothing itself: the list shows in Settings › Storage › Old and unused, ticked, and the person moves it (each file checked again, then to the Trash, where Put Back returns it) or keeps it. Show the person the list in your reply first, and call this only with the paths they agreed to. Never rm or overwrite a render or a project's file yourself.
+
+| input | | |
+|---|---|---|
+| `plan` | required | the list's id, from storage_plan |
+| `paths` | required | the paths from that list the person agreed to |
+| `why` | optional | one line the person sees with the list |
+
+## footage_add
+
+Access: HOST.
+
+Bring footage, sounds or stills into this project's assets/footage/ by their paths (files, or folders of them). Without go, a dry run: each clip, where it lands, and whether it's a clone (same APFS disk: takes no space) or a copy (another disk: its full size), refused if a copy would leave the Mac under its reserve. With go: true, the clips are cloned in. For a drive or an archive that should stay where it is, ask the person to link it as a library instead (Library → New library).
+
+| input | | |
+|---|---|---|
+| `files` | required | absolute paths of the clips or folders |
+| `go` | optional | true: add them (after a dry run you've read); left out: the dry run only |
+
 ## project_collaborators
 
 Access: PAGE, when the person allows agents to share.
