@@ -39,19 +39,29 @@ fell. Never `rm`, overwrite or tidy a render, a version or any project file to s
 version before the last". Old video leaves the Mac one way, the same for you and for the person:
 
 1. **Dry run.** `storage_plan` lists each candidate with its path, size, class and why it counts as dead: a feed render
-   no item names, an earlier version in `out/` nothing names, a frame folder, a `.part` file. The list has an id.
-   Nothing moves.
-2. **Show the person the list** in your reply. Never a candidate: anything an item, a note or a source names (by path
-   or by file name); final work (a name that says final, master, export or deliverable); the newest of a name's
-   versions; anything opened or changed in the last 7 days; a project's `media/`, `assets/`, `brand/`, `refs/` and
-   `attachments/`.
+   no item names, an earlier `-vN` version in `out/` with a newer one beside it that nothing names, a frame folder, a
+   `.part` file, and, as a class of their own, feed renders from before 0.1.4 whose workspace raea never recorded. The
+   list has an id, says how many files it read in how many workspaces, and names any workspace it couldn't read (not
+   on this Mac). Nothing moves.
+2. **Show the person the list** in your reply, with its classes apart; say the renders from before 0.1.4 may belong to
+   work raea can't see. Never a candidate: anything an item, a note, a timeline, a script or a source names, by path,
+   by file name, or by a pattern that builds it (`` `take-v${i}.mp4` ``, `f"shot_{n:03d}.mov"`); final work (final,
+   master, export, deliver or approved anywhere in its name or folder: `promo_final2`, `masters/`); the newest of a
+   name's versions; a number that isn't `-vN` (`shot-2`, `spot-30`); anything opened or changed in the last 7 days; a
+   project's `media/`, `assets/`, `brand/`, `refs/`, `attachments/` and `footage/`.
 3. **With their yes,** `storage_trash` with the list's id and the paths they agreed to. It moves nothing: your list
    waits in Settings → Storage, ticked, and the person presses Move to the Trash (or keeps them).
-4. raea checks each file again (the same size and time, named by nothing now, not open in another app), moves it to
-   the Trash, where Finder's Put Back returns it (or to raea's holding folder, with Put back in Settings), and logs who
-   confirmed it. Emptying the Trash is the person's.
+4. raea runs the dry run again and moves only paths it still lists, unchanged (the same size and time, named by
+   nothing now, not opened lately, not open in another app); any other path stays, with the reason. A list made by
+   hand, or edited, moves nothing. What moves goes to the Trash, where Finder's Put Back returns it (or to raea's
+   holding folder, with Put back in Settings), and the log keeps who confirmed it. Emptying the Trash is the person's.
+
+So the dry run can tell a version from a shot, name versions `NAME-vN` (`cut-v3.mp4`) and a delivered file with
+"final" in it.
 
 `storage_status` says what raea keeps on this Mac and in raea's cloud, and where each of the project's files stands
 (synced, to upload, not committed, only in the cloud). The person syncs, with Sync now in Settings → Storage; you
-don't. Frame dumps (`RAEA_READBACK`) go in a `NAME.frames/` folder outside `out/`, which goes to Git LFS; once the
-encode is done and a day has passed, `storage_plan` lists the folder if nothing names it.
+don't. Sync only sends: when another Mac sent first, it says raea's cloud is ahead, and the project is brought up to
+date on this Mac (git pull in its folder, which you may do when asked) before it syncs again. Frame dumps
+(`RAEA_READBACK`) go in a `NAME.frames/` folder, in `out/` or beside it; raea never commits one, and once a day has
+passed `storage_plan` lists it if nothing names it.

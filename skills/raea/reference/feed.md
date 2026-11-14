@@ -292,7 +292,7 @@ What raea keeps on this Mac and in its cloud: every byte by place (projects' fil
 
 Access: HOST.
 
-A dry run of old and unused files: feed renders no item names, earlier versions in a project's out/ that nothing names, frame folders and half-written .part files a render left. Each with its path, size, class and why it counts as dead, where raea looked for anything naming it, and the list's id. Never listed: anything an item, note, version or source names, final work (exports, masters), the newest of a name's versions, anything opened or changed in the last week, a project's sources. Moves nothing.
+A dry run of old and unused files: feed renders no item mentions (class render; unowned for ones posted before raea recorded who posted them, which a workspace outside raea's folder could still name), earlier versions (NAME-v1 beside a newer NAME-v2) in a project's out/ that nothing mentions, frame folders and half-written .part files a render left. Each with its path, size, class and why, how many files in which workspaces raea read for their names (written out, URL-encoded, or fitting a template like out/shot-${i}.mp4), and the list's id. Never listed: anything mentioned, final work (final, master, export, deliver, approved anywhere in its name), a file without an explicit -vN in out/ (shot-1, spot-30 are different files), the newest of a name's versions, anything opened or changed in the last week, a project's sources. Moves nothing.
 
 | input | | |
 |---|---|---|
