@@ -64,7 +64,8 @@ item, a note or a composition may still name it. Name versions `-vN` (`cut-v3.mp
 tell a version from a shot number, and put "final" in the name of a delivered file. When space is short, call
 `storage_plan`: it lists only versions with a newer one beside them, unused feed renders, frames and broken copies,
 never a file anything names, and it says why each is listed. Show the person that list, and only on their yes call
-`storage_trash` with it; the files go to the Trash, where the person can put them back.
+`storage_trash` with it: the list waits in Settings › Storage for the person to move, and what they move goes to the
+Trash, where they can put it back.
 
 ## A person's hand edits
 
