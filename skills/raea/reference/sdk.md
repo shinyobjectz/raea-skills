@@ -11,23 +11,23 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/3d` (sdk/raea/src/3d.tsx)
 
-`Body`, `Echoes`, `Goo`, `MeshSequence`, `Part`, `Physics`, `ZFight`, `about`, `bodyPose`, `gooSpec`, `hash01`, `lastBeat`, `part`, `physicsRequest`, `quatAxis`, `quatMul`, `snapPose`, `teleport`, `useBake`, `useGoo`, `usePhysics`
+`ATTRIBUTE_COLOR`, `ATTRIBUTE_NORMAL`, `ATTRIBUTE_POSITION`, `ATTRIBUTE_TANGENT`, `ATTRIBUTE_UV_0`, `ATTRIBUTE_UV_1`, `AmbientOcclusion`, `AntiAliasing`, `Atmosphere`, `BevyComponent`, `BevyResource`, `Bloom`, `Body`, `BufferMesh`, `Canvas3D`, `Capsule`, `Capsule3d`, `Compute`, `Cone`, `CrossSection`, `Cuboid`, `Cylinder`, `Decal`, `DepthCopy`, `DepthOfField`, `Echoes`, `Entities`, `Entity`, `Environment`, `EnvironmentMapLight`, `Field`, `Fire`, `Fisheye`, `Fog`, `FogVolume`, `FramePass`, `GBufferPass`, `Gizmo`, `Goo`, `Grade`, `Grass`, `ImagePlane`, `Instances`, `LensDistortion`, `Look`, `Matchmove`, `MeshPass`, `MeshSequence`, `MeshShaderPass`, `MeshVertexAttribute`, `Model`, `MotionBlur`, `Outline`, `Part`, `PhaseItem`, `Physics`, `Plane3d`, `Plate`, `Refinish`, `RichText`, `Scene`, `Screen`, `ShaderInstances`, `ShaderMesh`, `Shadows`, `Shape2D`, `Skybox`, `Solid`, `Span`, `Sphere`, `Splat`, `Sprite`, `SurfaceShader`, `Text3D`, `ThreeShaderMaterial`, `ToneMapping`, `Torus`, `Volume`, `VolumetricFog`, `ZFight`, `about`, `bodyPose`, `checkMatchmove`, `checkPass`, `clipEvents`, `crossSection`, `dofOf`, `eulerOf`, `gooSpec`, `grow`, `hash01`, `lastBeat`, `manifold`, `matchmoveIndex`, `matchmoveView`, `outline`, `part`, `physicsRequest`, `pick`, `place`, `pointerRay`, `quatAxis`, `quatMul`, `samplerSpec`, `scatter`, `sdf`, `snapPose`, `surfaceShader`, `surfaceTurn`, `teleport`, `toHex`, `useBake`, `useGoo`, `useMatchmove`, `usePhysics`
 
 ## `raea/animation` (sdk/raea/src/animation.ts)
 
-`clipEvents`
+`Animate`, `Stagger`, `clipEvents`, `curve`, `curveFn`, `delay`, `fade`, `fill`, `fingerprint`, `gridDelay`, `move`, `moves`, `parallel`, `pop`, `propsFingerprint`, `pushIn`, `reverse`, `rise`, `sampleAnimation`, `sampleMove`, `sequence`, `sequenceGap`, `slam`, `slide`, `stagger`, `strike`, `tick`, `timeline`, `toMove`, `track`, `useAnimation3d`, `wipe`
 
 ## `raea/app` (sdk/raea/src/app.ts)
 
-`App`, `BevyApp`, `First`, `FixedFirst`, `FixedLast`, `FixedPostUpdate`, `FixedPreUpdate`, `FixedUpdate`, `Last`, `PluginGroup`, `PostStartup`, `PostUpdate`, `PreStartup`, `PreUpdate`, `RunFixedMainLoop`, `SpawnScene`, `Startup`, `StateTransition`, `Update`, `conditions`, `definePlugin`
+`App`, `BevyApp`, `Composition`, `First`, `FixedFirst`, `FixedLast`, `FixedPostUpdate`, `FixedPreUpdate`, `FixedUpdate`, `Last`, `PluginGroup`, `PostStartup`, `PostUpdate`, `PreStartup`, `PreUpdate`, `RunFixedMainLoop`, `SpawnScene`, `Startup`, `StateTransition`, `Update`, `clearRegistry`, `conditions`, `definePlugin`, `getCompositions`, `registerRoot`
 
 ## `raea/asset` (sdk/raea/src/asset.ts)
 
-`MEDIA_ROOT`, `staticFile`
+`MEDIA_ROOT`, `fish`, `glbBytes`, `isGeneratedAsset`, `linearRgba`, `lyria`, `sao`, `staticFile`, `tokensynthNote`, `writeGlb`
 
 ## `raea/audio` (sdk/raea/src/audio.ts)
 
-`Audio`, `Tone`, `music`
+`Audio`, `Mix`, `SPEECH_LEAD`, `Seedling`, `SongPlot`, `Sound3D`, `Speech`, `Tone`, `music`, `prepareSpeech`, `song`, `songAt`, `speechAt`, `speechDuration`, `speechMade`, `speechStart`, `useSong`
 
 ## `raea/brief` (sdk/raea/src/brief.ts)
 
@@ -45,6 +45,14 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 `Hsla`, `LinearRgba`, `Okhsla`, `Oklaba`, `Oklcha`, `Srgba`, `Xyza`, `kelvin`, `toHex`
 
+## `raea/dev_tools` (sdk/raea/src/dev_tools.ts)
+
+`lintReport`, `motionLint`
+
+## `raea/editor` (sdk/raea/src/editor.ts)
+
+`CODE_KINDS`, `CURVES`, `EASES`, `EFFECTS`, `FASTEST`, `KEYED`, `ORDER`, `PRESET_PROPS`, `SLOWEST`, `TEXTS`, `TEXT_PROPS`, `TRACKS`, `TRANSITIONS`, `ahead`, `apply`, `applyAll`, `bezier`, `changed`, `clipEdits`, `clips`, `cut`, `eased`, `effectFilter`, `effectParts`, `empty`, `end`, `evict`, `find`, `fits`, `frameOf`, `fromRender`, `fromSequences`, `fromTracks`, `gridFrames`, `joined`, `keyOf`, `length`, `next`, `palette`, `partsFilter`, `playLength`, `played`, `points`, `presetError`, `profile`, `readAdds`, `readTimeline`, `ready`, `segmentsOf`, `seqEdits`, `showing`, `slot`, `snap`, `snapMove`, `sorted`, `sourceAt`, `speedOf`, `targets`, `textStyleError`, `textStyleOf`, `timecode`, `under`, `valueAt`, `without`
+
 ## `raea/feathers` (sdk/raea/src/feathers.ts)
 
 `AngleDegrees`, `Dimensionless`, `FeathersButton`, `FeathersCheckbox`, `FeathersColorInput`, `FeathersColorPlane`, `FeathersColorSlider`, `FeathersColorSwatch`, `FeathersDisclosureToggle`, `FeathersLazyMenu`, `FeathersListRow`, `FeathersListView`, `FeathersMenu`, `FeathersMenuButton`, `FeathersMenuDivider`, `FeathersMenuItem`, `FeathersMenuPopup`, `FeathersMenuToolButton`, `FeathersNumberInput`, `FeathersRadio`, `FeathersScrollbar`, `FeathersSelect`, `FeathersSlider`, `FeathersTextInput`, `FeathersTextInputContainer`, `FeathersToggleSwitch`, `FeathersToolButton`, `LengthMeters`, `NumberInputRange`, `NumberInputValue`, `StandardUnitKind`, `ThemeBackgroundColor`, `ThemeBorderColor`, `ThemeContext`, `ThemeTextColor`, `ThemedText`, `TimeSeconds`, `UiTheme`, `VirtualKeyboard`, `caption`, `channel_range`, `context_color`, `create_dark_theme`, `flex_spacer`, `fonts`, `gradient_ends`, `group`, `group_body`, `group_header`, `icon`, `icon_untinted`, `icons`, `label`, `label_dim`, `label_small`, `list_rows_from_strings`, `palette`, `pane`, `pane_body`, `pane_header`, `pane_header_divider`, `size`, `slider_label`, `subpane`, `subpane_body`, `subpane_header`, `to_border_radius`, `tokens`, `useInheritedColor`, `useThemeColor`
@@ -55,7 +63,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/gizmos` (sdk/raea/src/gizmos.ts)
 
-`Gizmo`
+`Gizmo`, `Overlay`, `overlays`
 
 ## `raea/hold` (sdk/raea/src/hold.ts)
 
@@ -71,15 +79,15 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/light` (sdk/raea/src/light.ts)
 
-`AmbientLight`, `Atmosphere`, `DirectionalLight`, `Environment`, `EnvironmentMapLight`, `GlobalAmbientLight`, `Pathtracer`, `PointLight`, `RectLight`, `Shadows`, `Skybox`, `SolariLighting`, `SpotLight`, `light_consts`
+`AmbientLight`, `Atmosphere`, `Daylight`, `DirectionalLight`, `Environment`, `EnvironmentMapLight`, `GlobalAmbientLight`, `Pathtracer`, `PointLight`, `RectLight`, `Shadows`, `Skybox`, `SolariLighting`, `SpotLight`, `UNITS`, `WindowLight`, `bounce`, `clearSun`, `daylight`, `kelvin`, `light_consts`, `readSky`, `roomExposure`, `sunDirection`, `sunPosition`, `windowLight`
 
 ## `raea/math` (sdk/raea/src/math.ts)
 
-`Affine2`, `curve`, `curveFn`, `hash01`, `quatAxis`, `quatMul`
+`Affine2`, `Easing`, `curve`, `curveFn`, `hash01`, `interpolate`, `measureSpring`, `quatAxis`, `quatMul`, `spring`
 
 ## `raea/mesh` (sdk/raea/src/mesh.ts)
 
-`ATTRIBUTE_COLOR`, `ATTRIBUTE_NORMAL`, `ATTRIBUTE_POSITION`, `ATTRIBUTE_TANGENT`, `ATTRIBUTE_UV_0`, `ATTRIBUTE_UV_1`, `BufferMesh`, `Capsule`, `Capsule3d`, `Cone`, `ConicalFrustum`, `Cuboid`, `Cylinder`, `Instances`, `Mesh2d`, `Mesh3d`, `MeshSequence`, `MeshVertexAttribute`, `Plane3d`, `Sphere`, `Torus`, `scatter`
+`ATTRIBUTE_COLOR`, `ATTRIBUTE_NORMAL`, `ATTRIBUTE_POSITION`, `ATTRIBUTE_TANGENT`, `ATTRIBUTE_UV_0`, `ATTRIBUTE_UV_1`, `BufferMesh`, `Capsule`, `Capsule3d`, `Cone`, `ConicalFrustum`, `CrossSection`, `Cuboid`, `Cylinder`, `Instances`, `Mesh2d`, `Mesh3d`, `MeshSequence`, `MeshVertexAttribute`, `Plane3d`, `Solid`, `Sphere`, `Torus`, `crossSection`, `manifold`, `outline`, `scatter`
 
 ## `raea/note` (sdk/raea/src/note.ts)
 
@@ -87,7 +95,11 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/pbr` (sdk/raea/src/pbr.ts)
 
-`AmbientOcclusion`, `Decal`, `ExtendedMaterial`, `Fire`, `Fog`, `FogFalloff`, `FogVolume`, `GridExtension`, `Lightmap`, `PaintExtension`, `ProceduralExtension`, `Refinish`, `ShaderExtension`, `ShaderMesh`, `StandardMaterial`, `SurfaceShader`, `ThreeShaderMaterial`, `ToonExtension`, `ToonMaterial`, `VolumetricFog`, `WearExtension`
+`AmbientOcclusion`, `Decal`, `ExtendedMaterial`, `Fire`, `Fog`, `FogFalloff`, `FogVolume`, `GridExtension`, `Lightmap`, `PaintExtension`, `ProceduralExtension`, `Refinish`, `ShaderExtension`, `ShaderMesh`, `Splat`, `StandardMaterial`, `SurfaceShader`, `ThreeShaderMaterial`, `ToonExtension`, `ToonMaterial`, `Volume`, `VolumetricFog`, `WearExtension`, `volumeShadow`
+
+## `raea/picking` (sdk/raea/src/picking.ts)
+
+`pick`, `pointerRay`
 
 ## `raea/post_process` (sdk/raea/src/post_process.ts)
 
@@ -103,11 +115,11 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/state` (sdk/raea/src/state.ts)
 
-`stepAll`, `useGameEvents`, `useGameState`
+`firstDecider`, `inState`, `machine`, `replayDecider`, `stateOf`, `stepAll`, `transitionOf`, `useGameEvents`, `useGameState`
 
 ## `raea/text` (sdk/raea/src/text.ts)
 
-`RichText`, `Span`, `Text3D`, `loadFont`
+`RichText`, `Span`, `Text3D`, `findPhrase`, `loadFont`, `useWords`, `word`
 
 ## `raea/time` (sdk/raea/src/time.ts)
 
@@ -119,7 +131,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/ui` (sdk/raea/src/ui.ts)
 
-`AbsoluteFill`, `AngularColorStop`, `BorderRadius`, `BoxShadow`, `BoxShadowSamples`, `ColorStop`, `ConicGradient`, `CornerRadius`, `EditableText`, `FontAtlasSet`, `FontCx`, `FontFeatureTag`, `FontSource`, `FontVariationTag`, `FontWidth`, `GhostNode`, `GlobalUiDebugOptions`, `GridPlacement`, `GridTrack`, `ImageNode`, `ImagePlugin`, `InlineImage`, `LinearGradient`, `MaterialNode`, `Node`, `Overflow`, `OverflowClipMargin`, `RadialGradient`, `RepeatedGridTrack`, `Rot2`, `Scrollbar`, `ScrollbarThumb`, `Text`, `Text2d`, `TextShadow`, `TextSpan`, `TextureAtlasLayout`, `UiPosition`, `UiRect`, `UiScale`, `UiTargetCamera`, `UiTexture`, `UiTransform`, `Val2`, `Viewport`, `auto`, `percent`, `px`, `targetImage`, `vh`, `vmax`, `vmin`, `vw`
+`ACTION_KEY`, `AbsoluteFill`, `AngularColorStop`, `BorderRadius`, `BoxShadow`, `BoxShadowSamples`, `ColorStop`, `ConicGradient`, `CornerRadius`, `EditableText`, `FEED_KEY`, `FontAtlasSet`, `FontCx`, `FontFeatureTag`, `FontSource`, `FontVariationTag`, `FontWidth`, `GhostNode`, `GlobalUiDebugOptions`, `GridPlacement`, `GridTrack`, `ImageNode`, `ImagePlugin`, `InlineImage`, `LinearGradient`, `MaterialNode`, `Node`, `Overflow`, `OverflowClipMargin`, `RadialGradient`, `Region`, `RepeatedGridTrack`, `Rot2`, `SPACE_KEY`, `Scrollbar`, `ScrollbarThumb`, `Text`, `Text2d`, `TextShadow`, `TextSpan`, `TextureAtlasLayout`, `UiPosition`, `UiRect`, `UiScale`, `UiTargetCamera`, `UiTexture`, `UiTransform`, `Val2`, `Viewport`, `actionsIn`, `applyActions`, `auto`, `feedIn`, `percent`, `proofBoxes`, `px`, `regionBand`, `targetImage`, `useRegion`, `vh`, `vmax`, `vmin`, `vw`
 
 ## `raea/video` (sdk/raea/src/video.ts)
 
