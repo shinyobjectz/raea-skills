@@ -17,7 +17,7 @@ running on this machine (its host answers). **PAGE**: needs the person's feed op
 person can do it. Every PAGE step says what a headless agent does instead.
 
 ## 1. Install (once) — HEADLESS
-<!-- sources: tools/release.sh apps/site/public/install engine/cli/src/skill.rs -->
+<!-- sources: tools/release.sh engine/cli/src/skill.rs -->
 
 - macOS (Apple Silicon) or Linux (x86_64): `curl -fsSL https://raea.io/install | sh`. Windows 10 or 11, in
   PowerShell: `irm https://raea.io/install.ps1 | iex`. Either puts `raea` under `~/.raea`, puts it on your PATH, and
@@ -295,7 +295,7 @@ least sure of. Once they've answered, `--tally` makes the answers evidence.
   the rest (one composition per shape, cutdowns, tags, handing over).
 
 ## Apps: web or native — HEADLESS
-<!-- sources: docs/targets.feature apps/targets/src sdk/ui/src/app.ts sdk/rune/src -->
+<!-- sources: apps/targets/src sdk/ui/src/app.ts sdk/rune/src -->
 
 An app is a React file with a default export: DOM elements, inline `style` or Tailwind `className`, on @raea/ui. One
 setting picks the host that draws it. Both are desktop windows that draw every pixel themselves (neither uses the
