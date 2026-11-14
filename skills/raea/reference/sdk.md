@@ -51,7 +51,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/editor` (sdk/raea/src/editor.ts)
 
-`CODE_KINDS`, `CURVES`, `EASES`, `EFFECTS`, `FASTEST`, `KEYED`, `ORDER`, `PRESET_PROPS`, `SLOWEST`, `TEXTS`, `TEXT_PROPS`, `TRACKS`, `TRANSITIONS`, `ahead`, `animStyle`, `apply`, `applyAll`, `bezier`, `captionLines`, `changed`, `clipEdits`, `clips`, `cut`, `eased`, `effectFilter`, `effectParts`, `empty`, `end`, `evict`, `find`, `fits`, `frameOf`, `fromRender`, `fromSequences`, `fromTracks`, `gridFrames`, `heard`, `joined`, `keyOf`, `length`, `next`, `palette`, `partsFilter`, `playLength`, `played`, `points`, `presetError`, `profile`, `readAdds`, `readTimeline`, `ready`, `segmentsOf`, `seqEdits`, `showing`, `slot`, `snap`, `snapMove`, `sorted`, `sourceAt`, `speedOf`, `targets`, `textStyleError`, `textStyleOf`, `timecode`, `under`, `valueAt`, `without`
+`CODE_KINDS`, `COMBOS`, `COMBO_KINDS`, `CURVES`, `EASES`, `EFFECTS`, `FASTEST`, `KEYED`, `ORDER`, `PRESET_PROPS`, `SLOWEST`, `TEXTS`, `TEXT_PROPS`, `TRACKS`, `TRANSITIONS`, `ahead`, `animStyle`, `apply`, `applyAll`, `bezier`, `captionLines`, `changed`, `clipEdits`, `clips`, `cut`, `eased`, `effectFilter`, `effectParts`, `empty`, `end`, `evict`, `find`, `fits`, `frameOf`, `fromRender`, `fromSequences`, `fromTracks`, `gridFrames`, `heard`, `joined`, `keyOf`, `length`, `next`, `palette`, `partsFilter`, `playLength`, `played`, `points`, `presetError`, `profile`, `readAdds`, `readTimeline`, `ready`, `segmentsOf`, `seqEdits`, `showing`, `slot`, `snap`, `snapMove`, `sorted`, `sourceAt`, `speedOf`, `targets`, `textStyleError`, `textStyleOf`, `timecode`, `under`, `valueAt`, `without`
 
 ## `raea/feathers` (sdk/raea/src/feathers.ts)
 
