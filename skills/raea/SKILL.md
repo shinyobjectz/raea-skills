@@ -29,8 +29,13 @@ go wrong by starting to make things first and finding a home for them later, or 
    says which one you're in. Pick the one the request belongs to. When
    none fits, say which project you'd make and make it (`raea project new NAME`) before any file of the work; ask
    when it's unclear which one is meant.
-3. **Say it, then go there.** One line before you start: "Working in WORKSPACE / PROJECT." Then `cd` into the
-   project's folder and read its context (section 3). Everything you make goes in it: compositions in
+3. **Name it by id.** A project's id is its folder's name, as `raea workspace --json` lists it. Titles repeat and
+   drift, and agents that go by them post to the wrong project; ids don't. So name a project by `WORKSPACE/ID`
+   everywhere (`raea show --project WORKSPACE/ID`, your notes, what you tell the person). When the person pastes a line
+   from the app's Copy reference (`raea feed item "Hero cut" (i-acp-1) in project "Launch" (launch), workspace
+   "Acme": /path/...`), it names exactly the thing they mean: that item, in that project.
+4. **Say it, then go there.** One line before you start: "Working in WORKSPACE / PROJECT (WORKSPACE/ID)." Then
+   `cd` into the project's folder and read its context (section 3). Everything you make goes in it: compositions in
    `compositions/`, footage and media in `assets/`, renders in `out/`. Never in the home folder, the Desktop, a temp
    folder or wherever the shell happened to start.
 
@@ -233,7 +238,10 @@ least sure of. Once they've answered, `--tally` makes the answers evidence.
   person watches, plays and leaves notes on it there (PERSON). `feed_items` reads the items and their notes.
 - Outside the app (a session in a terminal: Claude Code, Codex, Gemini CLI, Kimi Code, any harness), `raea show` does
   what `feed_post` does: `raea show FILE...` puts stills (several make a storyboard), a video, a sound, a
-  `NAME.script.ts` or `.md`, or a `.tsx` artifact in the project's feed as an item the person can use. It lands
+  `NAME.script.ts` or `.md`, or a `.tsx` artifact in the project's feed as an item the person can use. Name the project
+  as `--project WORKSPACE/ID` (an id from `raea workspace --json`, or the person's Copy reference line pasted whole),
+  never its title: raea refuses a title when your folder is in another project or two projects share it. Check that
+  the place it prints (`item ID, project ID in WORKSPACE`) is the one you meant. It lands
   quietly, with a notice, and the window stays where the person is (they may be working); `--open` brings the window
   up on it only when they're waiting on it. Ask everything you need at once, as one item: every question in it, and
   each choice with what it is to play or read while answering (`--preview FILE` after a `--choice` is that choice's;
