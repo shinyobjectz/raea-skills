@@ -32,8 +32,9 @@ go wrong by starting to make things first and finding a home for them later, or 
 3. **Name it by id.** A project's id is its folder's name, as `raea workspace --json` lists it. Titles repeat and
    drift, and agents that go by them post to the wrong project; ids don't. So name a project by `WORKSPACE/ID`
    everywhere (`raea show --project WORKSPACE/ID`, your notes, what you tell the person). When the person pastes a line
-   from the app's Copy reference (`raea feed item "Hero cut" (i-acp-1) in project "Launch" (launch), workspace
-   "Acme": /path/...`), it names exactly the thing they mean: that item, in that project.
+   from the app's Copy reference (a line that reads raea feed item "Hero cut" (i-acp-1) in project "Launch"
+   (launch), workspace "Acme": /path/..., naming no command), it names exactly the thing they mean: that item, in that
+   project.
 4. **Say it, then go there.** One line before you start: "Working in WORKSPACE / PROJECT (WORKSPACE/ID)." Then
    `cd` into the project's folder and read its context (section 3). Everything you make goes in it: compositions in
    `compositions/`, footage and media in `assets/`, renders in `out/`. Never in the home folder, the Desktop, a temp
