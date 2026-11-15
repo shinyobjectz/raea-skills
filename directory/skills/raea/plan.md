@@ -16,9 +16,10 @@ project's tasks.
   id, and which task the person's message is. Use the tools rather than writing the file yourself, so the person's
   list changes at once.
 - Anywhere else (a terminal in the project's folder, a headless run): open `plan.org` and edit it as text. Keep every
-  `:ID:` as it is, and give a new task one (`t-` and eight lowercase letters and digits). The app reads the file again
-  while the person's to-do list is open and before each of its agents' turns, so they see your changes. With no
-  `plan.org` yet, start one with the head below.
+  `:ID:` as it is, and give a new task one (`t-` and eight lowercase letters and digits; the app gives one to a task
+  that has none the next time an agent reads the plan). The app reads the file again while the person's to-do list is
+  open and before each of its agents' turns, so they see your changes. With no `plan.org` yet, start one with the head
+  below.
 - Find the folder with `raea project --json` (SKILL.md section 0). The plan sits beside `brief.ts` or `brief.md`.
 
 ## What a plan looks like
@@ -60,8 +61,9 @@ Graded warm; the window stays cold. [[item:i-hall-2]]
 - **Priority** `[#A]`, `[#B]` or `[#C]`, after the keyword. Use A for what blocks everything else, sparingly.
 - **Tags** after the words, between colons: `:look:sound:`. Letters, digits and `_`: write a dash as `_`
   (`act_one`). A task inherits its stage's tags. The feed's views and an item's tags read them.
-- **Dates** on the line after the heading: `DEADLINE: <2026-11-20 Fri>` when it's due, `SCHEDULED:` when to start it.
-  `CLOSED: [...]` is stamped when a task closes; don't write it by hand in the app, the tools do it.
+- **Dates** on one line right after the heading, the planning line: `DEADLINE: <2026-11-20 Fri>` when it's due,
+  `SCHEDULED:` when to start it, and `CLOSED: [...]`, stamped when a task closes (in the app the tools stamp it). All
+  three share that one line; Org reads no second planning line, and a drawer under one is lost to it.
 - **Properties**, in the drawer: `:ID:` (every task has one, and it never changes), `:ITEM:` the feed item it stands
   on or made, `:AGENT:` who has it by agent id (an `@name` while no agent has that name), `:FROM:` what asked for it
   (a message id, or `ITEM#COMMENT` for a comment). Anything else you add is kept.
@@ -85,14 +87,30 @@ Graded warm; the window stays cold. [[item:i-hall-2]]
 3. **Waiting on the person** (a pick, an approval, a note): mark it `REVIEW`, and put the item they're to look at on it
    (`item`).
 4. **Close it** as you finish, in the same turn: `plan_close` with the item you posted (feed_post's answer) and one
-   line on what was done. That stamps `CLOSED` and links the work. Outside the app: change the keyword to `DONE`, add
-   `CLOSED: [YYYY-MM-DD Day HH:MM]` as the first line under the heading, and put the item's id in `:ITEM:`.
+   line on what was done. That stamps `CLOSED` and links the work. Outside the app: change the keyword to `DONE`, put
+   `CLOSED: [YYYY-MM-DD Day HH:MM]` at the start of the planning line (make one right under the heading when it has
+   no DEADLINE or SCHEDULED), and put the item's id in `:ITEM:`.
 5. **No longer wanted**: `plan_close` with `state: "dropped"` and why. Remove a task only when it was a mistake; a
    dropped task keeps the record of what was decided.
 6. **Before you end the turn**: no task of yours is left `MAKING` that isn't still under way.
 
 A task linked to a feed item stands where the item does: when the person approves it or a test passes, the list shows
 it done. You still close it in the plan, so the file says so too.
+
+The calls, as the app's tools take them (every task by its id, from `plan_read` or the turn's plan block):
+
+```text
+plan_read   {}                                    or {"full": true} for the whole file
+plan_add    {"tasks": [{"title": "Light the oil door", "under": "Look", "checks": ["warm key", "cool fill"]},
+                       {"title": "Rim on the handle", "under": "t-k3x9q2ab"}]}
+plan_update {"changes": [{"id": "t-k3x9q2ab", "state": "making"}, {"id": "t-k3x9q2ab", "check": 0}]}
+plan_update {"changes": [{"id": "t-k3x9q2ab", "state": "review", "item": "i-door-2"}]}
+plan_close  {"id": "t-k3x9q2ab", "item": "i-door-3", "note": "Warm key at 3200K, cool fill from the window."}
+plan_close  {"id": "t-k3xa0c4d", "state": "dropped", "note": "The person cut the scene."}
+```
+
+`under` is a stage heading's words (made when there's none) or a task's id (a subtask); an id that isn't in the plan
+is refused, not made into a stage. Each answer lists the open tasks again, with the new ids.
 
 ## Big work: subtasks, checkboxes and progress
 
@@ -129,6 +147,10 @@ const { text: next } = applyEdits(text, [         // edits by id; every line it 
 ])
 checkPlan(readPlan(next))                         // what breaks the kinds' and properties' rules
 ```
+
+A word of a plugin's sequence written into a plan adds that sequence's `#+TODO:` line to the file's head, so Emacs
+cycles it too. `applyEdits` keeps every line it didn't change byte for byte; a heading whose keyword changes keeps its
+spacing and its tags' column, as Org's own `org-todo` does.
 
 `board`, `agenda` and `outline` are views of a plan; `defineView` adds one, and `useView(plan, name)` builds it in
 React. `answerPlanTool` answers the four plan tools on any text, for a host of your own.
