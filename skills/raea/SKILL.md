@@ -16,6 +16,27 @@ Each step below says where it runs. **HEADLESS**: the `raea` CLI alone, in any s
 running on this machine (its host answers). **PAGE**: needs the person's feed open in the app. **PERSON**: only the
 person can do it. Every PAGE step says what a headless agent does instead.
 
+## 0. First, every time: which workspace, which project — HEADLESS
+<!-- sources: apps/workspace/src engine/cli/src -->
+
+Before you write, render or generate anything, settle where the work belongs, and keep it all there. Agents most often
+go wrong by starting to make things first and finding a home for them later, or never.
+1. **The workspace.** `raea workspace --json` says which one you're in. The workspaces are the folders under raea.root
+   (`git config --global raea.root`). If you're in none, or not the one this work is for (the studio or client it's
+   for), pick the right one, and ask the person when it isn't clear. `raea workspace init NAME` only when they want a
+   new one.
+2. **The project.** `raea workspace --json` lists the workspace's projects and their folders, and `raea project --json`
+   says which one you're in. Pick the one the request belongs to. When
+   none fits, say which project you'd make and make it (`raea project new NAME`) before any file of the work; ask
+   when it's unclear which one is meant.
+3. **Say it, then go there.** One line before you start: "Working in WORKSPACE / PROJECT." Then `cd` into the
+   project's folder and read its context (section 3). Everything you make goes in it: compositions in
+   `compositions/`, footage and media in `assets/`, renders in `out/`. Never in the home folder, the Desktop, a temp
+   folder or wherever the shell happened to start.
+
+In the raea app, a chat opened from a project's feed is already in its workspace and project: work there. If the
+person's request turns out to be for another project partway through, stop, say so, and move to it before going on.
+
 ## 1. Install (once) — HEADLESS
 <!-- sources: tools/release.sh engine/cli/src/skill.rs -->
 
