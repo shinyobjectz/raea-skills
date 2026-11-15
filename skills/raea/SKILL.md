@@ -38,6 +38,10 @@ go wrong by starting to make things first and finding a home for them later, or 
    `cd` into the project's folder and read its context (section 3). Everything you make goes in it: compositions in
    `compositions/`, footage and media in `assets/`, renders in `out/`. Never in the home folder, the Desktop, a temp
    folder or wherever the shell happened to start.
+5. **Open or start the project's plan.** `plan.org` at the top of the project's folder is its to-do list, the one the
+   person sees in the app. Read it, find the task this work is (or add it), and keep it as you go: mark tasks as you
+   start them, close them with what you made, add what's left. In the app, the plan tools; anywhere else, the file as
+   Org text. [plan.md](plan.md) says how.
 
 In the raea app, a chat opened from a project's feed is already in its workspace and project: work there. If the
 person's request turns out to be for another project partway through, stop, say so, and move to it before going on.
@@ -88,6 +92,7 @@ task needs.
 | generated images, video, sound or meshes | [gen.md](gen.md) |
 | the export, the share copy, platform specs, posting a deliverable | [delivery.md](delivery.md) |
 | working with the person in the raea app: the feed, controllers, the editor, boards | [collaborate.md](collaborate.md) |
+| planning the work and keeping its tasks: the project's plan.org, the person's to-do list | [plan.md](plan.md) |
 | checking a cut against the person's taste, reading their notes on a sound, or teaching their fingerprint | [fingerprint.md](fingerprint.md) |
 
 Across all of them, `craft/`: [craft/ROUTER.md](craft/ROUTER.md) is how to decide what to make (the order of work and

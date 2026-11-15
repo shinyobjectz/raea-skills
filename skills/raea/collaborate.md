@@ -10,6 +10,10 @@ to reach for each. Headless, with no app, SKILL.md's steps 5 and 6 say what to d
 | ...then | Use |
 |---|---|
 | know what to make, as the project stands now | `feed_brief` (the brief.ts, current); in a workspace chat, `workspace_read` for its projects and agents |
+| know what's planned, what's under way and what the person's message asks of you | `plan_read` (the project's plan.org: open tasks by id); each turn's prompt carries the same as `raea://plan/<project>`, with the task the message is ([plan.md](plan.md)) |
+| plan work of more than one step, or note what's left to do | `plan_add`: tasks under a stage heading, or under a task as subtasks, with checkboxes for small steps |
+| say you've started a task, or that it waits on the person | `plan_update` with `state` `making` or `review`; tick its checkboxes with `check` |
+| finish a task, or drop one that no longer applies | `plan_close` with the item you posted (it stamps CLOSED and links the work), or `state: "dropped"` and why |
 | say what you'd make next and let the person choose before you spend the time | `feed_propose`: a planned item they accept, or don't |
 | show what you made | `feed_post`: a render, a still, audio or a game; a new version names the item it `replaces` and says in `changed` what changed |
 | let the person look around a 3D scene, a set of shots, or props and characters, and point at what is wrong in it | `feed_post` type `scene` with the scene's `.tsx` (or a component's, or a model); `files` adds more as a board (a storyboard's shots, a grid of props), `names` says what each is called. They move through it live, pin comments to points on its surfaces (marked mesh, shader, clipping or artifact; each tells you the point in the scene's space and where the part is written), and may move, draw and re-key parts in the file by hand: the next round you are sent lists what they changed, so read the file again and keep it |

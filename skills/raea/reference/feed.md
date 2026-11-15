@@ -70,9 +70,52 @@ Set the tags of an item already in the project's feed (feed_items lists them wit
 
 Access: PAGE.
 
-Read the project's brief as it stands now, as brief.ts (`export default brief({...})` from "raea/brief"): what to make, for whom, the one thing to believe, its deliverables and staged tasks.
+Read the project's brief as it stands now, as brief.ts (`export default brief({...})` from "raea/brief"): what to make, for whom, the one thing to believe and its deliverables. Its tasks are the plan's: plan_read.
 
 No input.
+
+## plan_read
+
+Access: PAGE.
+
+Read the project's plan, plan.org at the top of its folder (Org mode): its open tasks under their stage headings, each with its id, keyword (TODO, MAKING, REVIEW), priority, tags, dates, progress, the feed item it stands on and who has it, and how many are closed. full: the whole file as well. Read it before you plan or change a task; the ids are how the other plan tools name tasks.
+
+| input | | |
+|---|---|---|
+| `full` | optional | the whole plan.org text as well: closed tasks, notes, checkboxes |
+
+## plan_add
+
+Access: PAGE.
+
+Add tasks to the project's plan, in order: before work of more than one step, its steps; whatever you find left to do. Each goes under a stage heading (under: its words, made when there's none) or a task (under: its id, a subtask), or before or after a task; with none of them, at the end. A task is yours unless agents names others. Answers with the new ids and the open tasks.
+
+| input | | |
+|---|---|---|
+| `tasks` | required | the tasks, in order, each { title, under?, before?, after?, state?, priority?, tags?, deadline?, scheduled?, item?, agents?, from?, checks?, note? }: under a stage heading's words or a task's id; deadline and scheduled as YYYY-MM-DD; agents by id (you when left out); checks its checkboxes |
+
+## plan_update
+
+Access: PAGE.
+
+Change tasks in the project's plan by id: mark one MAKING as you start it or REVIEW when it waits on the person, tick a checkbox (check: its place, 0 first) or add one, change its words, priority, tags, dates, item or who has it, add a note, move it, or remove it (a mistake only: drop work that no longer applies with plan_close). Answers with the open tasks.
+
+| input | | |
+|---|---|---|
+| `changes` | required | the changes, in order, each { id, state?, title?, priority?, tags?, deadline?, scheduled?, item?, agents?, note?, check?, done?, add_check?, move?, remove? }: state todo, making, review, done or dropped; check a checkbox's place (0 first) to tick; move { before, after or under } |
+
+## plan_close
+
+Access: PAGE.
+
+Close a task in the project's plan when its work is done: DONE with the time (CLOSED) and the feed item it made, or dropped when it no longer applies. Close each task you finish in the turn you finish it, with the item you posted. Answers with the open tasks.
+
+| input | | |
+|---|---|---|
+| `id` | required | the task's id, from plan_read |
+| `state` | optional | done (the default) or dropped |
+| `item` | optional | the feed item that did it: feed_post's answer |
+| `note` | optional | one line on what was done, or why it was dropped |
 
 ## workspace_read
 
