@@ -35,7 +35,7 @@ with a capital, hooks with `use`. A component's props are in its file.
 
 ## `raea/brief` (sdk/raea/src/brief.ts)
 
-`brief`, `fingerprint`, `kit`, `parts`, `scene`, `script`, `shot`, `taste`
+`brief`, `cut`, `fingerprint`, `kit`, `parts`, `scene`, `script`, `shot`, `taste`
 
 ## `raea/camera` (sdk/raea/src/camera.ts)
 

@@ -311,8 +311,12 @@ deliverables?: Array<string>,
 /**
  * the most critic rounds the job gets; at the cap it is delivered with what's still missing (8 by default)
  */
-rounds?: number, };
-export type MakeKind = "scene" | "kit" | "shot";
+rounds?: number, 
+/**
+ * a cut job's contract: the brief as rules (cut.rs)
+ */
+cut?: MakeCut, };
+export type MakeKind = "scene" | "kit" | "shot" | "cut";
 export type MakeSource = "customer" | "reference";
 export type MakeDialValue = number | string;
 export type MakeDial = MakeDialValue | { value: MakeDialValue, source?: MakeSource, 
@@ -399,4 +403,86 @@ composition?: string,
  * its frame rate, for the frames `seconds` spans (30 when left out)
  */
 fps?: number, };
+export type MakeCut = { 
+/**
+ * the brief as text, relative to brief.ts (`pdftotext -layout brief.pdf media/brief.txt`): every `from` is found in it
+ */
+brief: string, 
+/**
+ * how many cuts the brief asks for; fewer planned is held open until an answered `open` item about "count" says why
+ */
+count?: MakeQuoted<number>, 
+/**
+ * a cut's length when its own `seconds` says none: [least, most]
+ */
+seconds?: [number, number], 
+/**
+ * the formats every cut is delivered in when its own `formats` says none: "9:16", "16:9", "1:1", "4:5"
+ */
+formats?: Array<string>, cuts?: Array<MakeCutPlan>, 
+/**
+ * what is said or shown: in every cut unless `every: false` (then in one or more)
+ */
+say?: Array<MakePhrase>, 
+/**
+ * what no cut says or shows: a banned claim, a word, a name
+ */
+never?: Array<MakePhrase>, 
+/**
+ * the line every cut ends on, heard or on screen in its last `within` seconds
+ */
+cta?: MakeCta, 
+/**
+ * the brief's open items ([TO CONFIRM]): each holds the job open until it has an answer
+ */
+open?: Array<MakeOpen>, 
+/**
+ * every face whole and every text big enough, by the frames check of each file (true when left out)
+ */
+frames?: boolean, };
+export type MakeQuoted<T> = { value: T, 
+/**
+ * the brief's own words, as they are in its text
+ */
+from: string, };
+export type MakeCutPlan = { 
+/**
+ * [a-z0-9_], unique: each format lands as out/cuts/<id>_<W>x<H>.mp4 ("a1_s1_9x16.mp4")
+ */
+id: string, angle?: string, 
+/**
+ * solo or mashup
+ */
+kind?: string, 
+/**
+ * one of the brief's hook types ("Direct Problem", "Reaction")
+ */
+hook?: string, 
+/**
+ * captions, hook (a text hook) or none
+ */
+text?: string, formats?: Array<string>, seconds?: [number, number], };
+export type MakePhrase = { 
+/**
+ * as it's said or shown; compared in lower case, by letters and digits ("24/7" and "24-7" are the same)
+ */
+text: string, from: string, 
+/**
+ * `say` only: false when one cut saying it is enough
+ */
+every?: boolean, };
+export type MakeCta = { text: string, from: string, 
+/**
+ * how near the end it must land, in seconds (8 when left out)
+ */
+within?: number, };
+export type MakeOpen = { question: string, from: string, 
+/**
+ * what it decides: "count", "cta", "offer", a cut's id...
+ */
+about?: string, 
+/**
+ * the person's answer, as they gave it, and who gave it: until then the job can't be done
+ */
+answer?: string, by?: string, };
 ```

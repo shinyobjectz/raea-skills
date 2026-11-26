@@ -21,6 +21,26 @@ A viewer who had no plan to watch stops, believes the brief's `believe:` line, a
 - **Plan it.** Hook · problem · proof · ask as a storyboard, approved before anything renders. Chain its cuts on the
   thirds so the proof lands where the problem was (`raea guide match-cuts`).
 
+## A client's brief is a contract
+
+When a client hands you a brief (a PDF, a doc, an email of rules), make it rules before you plan a single cut, or it
+is only context, and context gets lost. Run `pdftotext -layout BRIEF.pdf media/brief.txt`, then write
+`make: cut({ cut: {...} })` on brief.ts from it:
+
+- `count`, `seconds`, `formats` and every cut (id, angle, solo or mashup, hook, captions or a text hook);
+- `say`: the phrases the brief asks every cut to say or show (`every: false` when one cut is enough);
+- `never`: the claims, words and names it bans;
+- `cta`: the exact line every cut ends on;
+- `open`: each [TO CONFIRM], gap or contradiction in it, as a question for the review.
+
+Every rule carries `from`, the brief's own words for it, copied exactly. `raea make status` finds each one in
+media/brief.txt, so a rule can't be made up and a line can't be paraphrased away. Then it holds every file at
+out/cuts/ID_WxH.mp4: its shape and length; its words (FILE.words.json, newer than the file: raea cloud writes it
+after every render) for each `say`, `never` and the CTA; and its frames check (FILE.frames-check.json, newer than
+the file: raea cloud's measured faces and text sizes; `frames: false` where there is none). The job isn't done, and
+the Stop hook won't let you end, until every gate is clear and every `open` item has the person's answer, written in
+with who gave it.
+
 ## The decisions
 
 Each one has a default that comes easily. Question it before you take it.
